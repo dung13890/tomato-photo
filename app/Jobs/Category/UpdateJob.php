@@ -4,9 +4,11 @@ namespace App\Jobs\Category;
 
 use App\Jobs\Job;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Traits\UploadableTrait;
 
 class UpdateJob extends Job
 {
+    use UploadableTrait;
     /**
      * Create a new job instance.
      *
@@ -31,6 +33,14 @@ class UpdateJob extends Job
     {
         $data = array_only($this->params, $repository->model->getFillable());
         $data['locked'] = $data['locked'] ?? false;
+        if (array_has($this->params, 'image')) {
+            if (!empty($this->item->image_src)) {
+                $this->deleteSource($this->item->image_src);
+            }
+            $image = $this->uploadFile($this->params['image']);
+            $data['image_src'] = $image->src;
+            $data['image_title'] = $image->title;
+        }
 
         $repository->update($this->item, $data);
     }

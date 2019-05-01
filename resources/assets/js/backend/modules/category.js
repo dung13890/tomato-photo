@@ -20,6 +20,8 @@ class Category {
 
     notification.destroyRow(null, 'li');
     notification.flashMessage();
+    var uploadfile = new Uploadfile();
+    uploadfile.init();
   }
 
   sortImages () {
