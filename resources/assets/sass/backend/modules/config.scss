@@ -1,0 +1,14 @@
+@import "./../partials/uploadfile";
+@import "../../../bower/summernote/dist/summernote";
+
+.tab-content {
+  .tab-pane {
+    margin: 20px 0;
+  }
+}
+
+#blog, #about, #contact {
+  .file-upload {
+    height: 300px;
+  }
+}

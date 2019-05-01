@@ -1,0 +1,46 @@
+/* Override bootstrap */
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+/* Application variables */
+$color-body: #333;
+$color-body-bg: #fff;
+
+$color-topbar: #fff;
+$color-topbar-bg: #577c3f;
+
+$color-header: #333;
+$color-header-bg: #fff;
+$color-footer: rgba(255, 255, 255, 0.8);
+// $color-footer: rgba(255, 255, 255, 0.8);
+// $color-footer-bg: rgba(31, 31, 34, 0.9);
+// $color-footer-bg: #262a35;
+// $color-footer-bg: #333;
+// $color-footer-bg: #303235;
+$color-footer-bg: #577c3f;
+// $color-footer-border: rgba(68, 68, 68, 0.86);
+// $color-footer-border: rgba(58, 60, 64, 0.7);
+$color-footer-border: #507339;
+// $color-primary: #f26322;
+$color-primary: #bc2d31;
+// $color-secondary: #3880ff;
+$color-secondary: #567c3e;
+$color-border: #ebebeb;

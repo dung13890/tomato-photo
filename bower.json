@@ -1,0 +1,26 @@
+{
+  "name": "we-edit",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/dung13890/we-edit",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "resources/assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Ionicons": "ionicons#^2.0.1",
+    "jqTree": "jqtree#^1.4.3",
+    "summernote": "^0.8.8",
+    "font-awesome": "^4.7.0",
+    "jquery": "1.11.0",
+    "grid-editor": "^0.2.6",
+    "jquery-ui": "^1.12.1",
+    "select2": "^4.0.5"
+  }
+}

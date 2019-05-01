@@ -1,0 +1,241 @@
+@media (max-width: 1200px) {
+    .flexslider {
+        .slides {
+            .slide-item-text {
+                max-width: 85%;
+            }
+        }
+    }
+
+    .crazy-block {
+        padding-left: 8em;
+    }
+
+    .contact-work .crazy-style {
+        padding-left: 8em;
+    }
+
+    .library-gallery .arrow {
+        left: 0;
+    }
+}
+
+@media (max-width: 992px) {
+    .flexslider {
+        .slides {
+            .slide-item-text {
+                h1,
+                h2 {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+
+    .introduction-wrapper {
+        img {
+            margin-top: 30px;
+        }
+    }
+
+    .showcase-block {
+        .showcase-text-wrapper {
+            padding: 3em 4em;
+        }
+
+        &.showcase-image-bottom {
+            .showcase-image {
+                order: 0;
+            }
+
+            .showcase-text {
+                order: 1;
+            }
+        }
+    }
+
+    .contact-work .crazy-style {
+        padding: 1.9em 0 1.9em 2em;
+    }
+
+    .image-library-wrapper {
+        padding-top: 100px;
+    }
+
+    .library-intro {
+        text-align: center;
+    }
+
+    .library-gallery {
+        padding-top: 80px;
+    }
+
+    .library-gallery .arrow {
+        left: 20px;
+    }
+
+    .page-header {
+        .page-header-desc {
+            padding-right: 0;
+        }
+    }
+
+    .footer-main {
+        p, ul, ol {
+            padding: 0;
+        }
+    }
+
+    .f-col {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .f-logo-wrapper {
+        text-align: center;
+
+        .f-logo {
+            display: inline-block;
+            margin: auto;
+            img {
+                display: inline-block;
+                margin: auto;
+            }
+        }
+    }
+
+    .footer-main {
+        padding: 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-topbar {
+        text-align: center;
+
+        ul {
+            li.time {
+                float: none;
+            }
+        }
+    }
+
+    .contact-work.contact-work__left:before,
+    .contact-work.contact-work__right:before {
+        display: none !important;
+    }
+
+    .contact-info-wrapper .col-md-4 {
+        margin-bottom: 20px;
+    }
+
+    .flexslider {
+        .slides {
+            .slide-item-text {
+                max-width: 60%;
+                padding-top: 10px;
+                padding-bottom: 10px;
+
+                h1,
+                h2 {
+                    font-size: 20px;
+                    letter-spacing: 8px;
+                }
+            }
+        }
+    }
+
+    .crazy-block {
+        padding-left: 1em;
+        width: 100%;
+    }
+
+    .library-gallery .arrow {
+        display: none !important;
+    }
+
+    .signup-wrapper {
+        .pt-5, .py-5 {
+            padding-top: 0!important;
+        }
+
+        .form.questions-form {
+            margin: auto;
+        }
+    }
+
+    .contact-work {
+        justify-content: center;
+
+        &.text-left,
+        &.text-right {
+            text-align: center !important;
+        }
+    }
+
+    .contact-block.image-bottom .contact-block-image {
+        position: static;
+    }
+
+    .contact-form-block {
+        margin-top: 40px;
+    }
+
+    .contact-form {
+        .form-group {
+            > .col-md-6:first-child {
+                margin-bottom: 1.8rem;
+            }
+        }
+    }
+
+    .copyright,
+    .copyright .list-horizontal {
+        text-align: center;
+    }
+
+    .copyright .list-horizontal {
+        margin-top: 5px;
+    }
+
+    .facebook-box-wrapper {
+        text-align: center;
+
+        .facebook-box {
+            display: inline-block;
+            margin: auto;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-item {
+        .testimonial-image {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-content {
+            text-align: center;
+        }
+    }
+
+    .single-gallery-items {
+        width: 20%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .site-navigation {
+        .site-navigation-main {
+            > li {
+                padding-left: 3px;
+                padding-right: 3px;
+
+                > a {
+                    padding-left: 3px;
+                    padding-right: 3px;
+                }
+            }
+        }
+    }
+}

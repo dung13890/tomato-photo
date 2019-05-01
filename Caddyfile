@@ -1,0 +1,11 @@
+tomato.localhost:80 {
+    tls off
+    root /var/www/app/public
+    fastcgi / workspace:9000 php {
+        index index.php
+    }
+    errors /var/www/app/storage/logs/caddy.log
+    rewrite {
+        to {path} {path}/ /index.php?{query}
+    }
+}
