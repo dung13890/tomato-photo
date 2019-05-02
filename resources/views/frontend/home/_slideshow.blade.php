@@ -7,7 +7,7 @@
                         @foreach ($slides as $slide)
                         <div class="swiper-slide slide-item">
                             <div class="img-wrapper">
-                                <img src="{{ $slide->image_src }}" alt="{{ $slide->description }}" />
+                                <img src="{{ publicSrc($slide->image_src) }}" alt="{{ $slide->title }}" />
                             </div>
                             <div class="slide-item-text container crazy-style-1">
                                 <div class="slide-item-text__inner">

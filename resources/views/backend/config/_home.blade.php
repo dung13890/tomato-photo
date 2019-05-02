@@ -58,6 +58,14 @@
             </div>
         </div>
         <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    {{ Form::label('skype', __('repositories.label.skype'), ['class'=>'control-label']) }}
+                    {{ Form::text('skype[]', $items->keyBy('key')['skype']['value'][0] ?? null, ['class' => 'form-control']) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
             {{ Form::label('address', __('repositories.label.address'), ['class'=>'control-label']) }}
             {{ Form::textarea('address[]', $items->keyBy('key')['address']['value'][0] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
         </div>

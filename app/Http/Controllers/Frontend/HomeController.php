@@ -31,7 +31,7 @@ class HomeController extends FrontendController
         $this->compacts['slides'] = $this->repoSlide->getDataByCategory(
             config('common.slide.limit'),
             0,
-            ['description', 'image_src']
+            ['title', 'description', 'image_src']
         );
         $this->compacts['testimonials'] = $this->repoContact->getTestimonials(
             config('common.contact.limit'),

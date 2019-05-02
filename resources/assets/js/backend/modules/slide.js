@@ -8,6 +8,7 @@ class Slide {
     var _$ = window.$;
     let columns = [
       { data: 'id', name: 'id', visible: false },
+      { data: 'title', name: 'title'},
       { data: 'description', name: 'description'},
       { data: 'image_src',
         name: 'image_src',

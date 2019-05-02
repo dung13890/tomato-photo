@@ -3,29 +3,23 @@
         <div class="container">
             <div class="row">
                 <div class="f-col f-logo-wrapper text-center col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                    {{-- <a href="/" class="f-logo">
-                        <img src="https://ps-vn.com/wp-content/uploads/2017/10/logo-color.png" alt="we-edit.com" />
-                    </a> --}}
                     <div class="sales-block">
                         <h4>Talk to Sales</h4>
-                        <a class="phone-link" href="tel:+18006853624 " target="_self">1-800-685-3624</a>
-                        <a class="btn btn-theme" href="/contact-us">REQUEST A CONTACT</a>
+                        <a class="phone-link" href="tel:{{ $configs['phone'][0] ?? null }}" target="_self">{{ $configs['phone'][0] ?? null }}</a>
+                        <a class="btn btn-theme" href="{{ route('contact') }}">REQUEST A CONTACT</a>
                     </div>
                     <ul class="social horizontal">
-                        <li><a href="#" target="_blank"><i class="ion ion-logo-facebook" aria-label="Facebook"></i></a></li>
-                        {{-- <li><a href="#" target="_blank"><i class="ion ion-logo-twitter" aria-label="Twitter"></i></a></li> --}}
-                        <li><a href="#" target="_blank"><i class="ion ion-logo-instagram" aria-label="true"></i></a></li>
-                        <li class="last"><a href="#" target="_blank"><i class="ion ion-logo-youtube" aria-label="YouTube"></i></a></li>
+                        <li><a href="{{ $configs['facebook'][0] ?? null }}" target="_blank"><i class="ion ion-logo-facebook" aria-label="Facebook"></i></a></li>
+                        <li><a href="{{ $configs['instagram'][0] ?? null }}" target="_blank"><i class="ion ion-logo-instagram" aria-label="true"></i></a></li>
+                        <li class="last"><a href="{{ $configs['youtube'][0] ?? null }}" target="_blank"><i class="ion ion-logo-youtube" aria-label="YouTube"></i></a></li>
                     </ul>
                 </div>
                 <div class="f-col col-sm-6 col-md-4 col-lg-2 col-xl-2">
                     <h3 class="f-title">Our Services</h3>
                     <ul class="nav-links">
-                        <li><a href="#">VIRTUAL FURNITURE</a></li>
-                        <li><a href="#">DAY TO DUSK</a></li>
-                        <li><a href="#">PHOTO ENHANCEMENT</a></li>
-                        <li><a href="#">PANORAMIC STITCHING</a></li>
-                        <li><a href="#">DECLUTTERING</a></li>
+                        @foreach ($__categories as $category)
+                        <li><a href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="f-col col-sm-6 col-md-4 col-lg-3 col-xl-3">
@@ -49,15 +43,6 @@
                         <a href="#" class="single-gallery-items" target="_blank">
                             <img src="/images/static/temp/flickr/06.jpg" alt="">
                         </a>
-                        {{-- <a href="#" class="single-gallery-items" target="_blank">
-                            <img src="/images/static/temp/flickr/07.jpg" alt="">
-                        </a>
-                        <a href="#" class="single-gallery-items" target="_blank">
-                            <img src="/images/static/temp/flickr/08.jpg" alt="">
-                        </a>
-                        <a href="#" class="single-gallery-items" target="_blank">
-                            <img src="/images/static/temp/flickr/09.jpg" alt="">
-                        </a> --}}
                     </div>
                 </div>
 
@@ -74,12 +59,12 @@
     <section class="copyright">
         <div class="container">
             <div class="row">
-                <p class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">© sitename.domain Pty Ltd. All Rights Reserved.</p>
+                <p class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">{{ $configs['copyright'][0] ?? null }}</p>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <ul class="list-horizontal">
-                        <li><a href="/about-us">About</a></li>
-                        <li><a href="/news">Blog</a></li>
-                        <li><a href="/contact-us">Contact</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('blog') }}">Blog</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>

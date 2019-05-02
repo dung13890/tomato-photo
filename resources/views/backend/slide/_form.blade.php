@@ -33,11 +33,21 @@
 <div class="form-group">
     <div class="row">
         <div class="col-sm-8">
+            {{ Form::label('title', __('repositories.label.title'), ['class'=>'control-label']) }}
+            {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.title')]) }}
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-8">
             {{ Form::label('description', __('repositories.label.description'), ['class'=>'control-label']) }}
             {{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.description')]) }}
         </div>
     </div>
 </div>
+
 <div class="form-group">
     {{ Form::label('name', __('repositories.label.image') . __('repositories.image_size.slide'), ['class' => 'control-label']) }}
     @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_src) ? $item->image_src : null])

@@ -16,24 +16,16 @@ class SlidesSeeder extends Seeder
         Slide::truncate();
         $data = [
             [
-                'description' => 'WORLD CLASS SUPPORT',
-                'image_src' => 'seeds/slider_1.jpeg',
-                'image_title' => 'slider_1.jpeg',
+                'title' => 'WORLD CLASS SUPPORT',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+                'image_src' => 'seeds/slides/slide-01.jpg',
+                'image_title' => 'slide-01.jpg',
             ],
             [
-                'description' => 'PHOTOGRAPHY CREATIVE',
-                'image_src' => 'seeds/slider_2.jpeg',
-                'image_title' => 'slider_2.jpeg',
-            ],
-            [
-                'description' => 'HELLO WORLD! CRAZY',
-                'image_src' => 'seeds/slider_3.jpeg',
-                'image_title' => 'slider_3.jpeg',
-            ],
-            [
-                'description' => 'WORLD CLASS COMBINATION',
-                'image_src' => 'seeds/slider_4.jpeg',
-                'image_title' => 'slider_4.jpeg',
+                'title' => 'PHOTOGRAPHY CREATIVE',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+                'image_src' => 'seeds/slides/slide-02.jpg',
+                'image_title' => 'slide-02.jpg',
             ],
         ];
         app(Slide::class)->insert($data);
@@ -43,7 +35,7 @@ class SlidesSeeder extends Seeder
             app(Slide::class)->insert($data);
         }
         if (App::environment('local')) {
-            factory(Slide::class, 10)->create();
+            factory(Slide::class, 0)->create();
         }
     }
 }

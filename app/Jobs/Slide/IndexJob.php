@@ -19,6 +19,7 @@ class IndexJob extends Job
 
     protected $dataSelect = [
         'id',
+        'title',
         'description',
         'image_src',
         'image_title',

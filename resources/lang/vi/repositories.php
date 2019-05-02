@@ -76,6 +76,7 @@ return [
         'image' => 'Hình ảnh',
         'images' => 'Nhiều hình ảnh',
         'phone' => 'Điện thoại',
+        'skype' => 'Skype',
         'fax' => 'Fax',
         'content' => 'Nội dung',
         'banner' => 'Ảnh banner',

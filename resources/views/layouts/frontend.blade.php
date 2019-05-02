@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('frontend._partials._head')
 
@@ -21,7 +21,7 @@
             <i class="fa fa-long-arrow-up"></i>
         </a> --}}
 
-        <a href="skype:skype:-skype-name-?chat?chat" id="action-skype"><i class="ion ion-logo-skype"></i><span>Call for us</span></a>
+        <a href="skype:{{ $configs['skype'][0] ?? null }}?chat" id="action-skype"><i class="ion ion-logo-skype"></i><span>Call for us</span></a>
 
         <div id="contact-box" class="contact-box">
             <div class="contact-box__content">
