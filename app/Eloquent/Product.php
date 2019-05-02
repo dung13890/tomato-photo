@@ -8,15 +8,12 @@ class Product extends Model
 {
     protected $fillable = [
         'name',
-        'image_src',
-        'image_title',
-        'image_ba_src',
-        'image_ba_title',
+        'image_before_src',
+        'image_after_src',
+        'image_before_title',
+        'image_after_title',
         'description',
-        'intro',
         'sort',
-        'price',
-        'is_home',
         'locked',
         'category_id',
     ];
@@ -25,8 +22,8 @@ class Product extends Model
     {
         return $query->where('name', 'LIKE', "{$keywords}%")
             ->orwhere('description', 'LIKE', "{$keywords}%")
-            ->orwhere('intro', 'LIKE', "{$keywords}%")
-            ->orWhere('image_title', 'LIKE', "{$keywords}%");
+            ->orWhere('image_before_title', 'LIKE', "{$keywords}%")
+            ->orWhere('image_after_title', 'LIKE', "{$keywords}%");
     }
 
     public function scopeByCategory($query, $categoryId)

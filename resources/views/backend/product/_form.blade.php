@@ -37,23 +37,11 @@
                     {{ Form::label('name', __('repositories.label.title'), ['class'=>'control-label']) }}<span class="require">*</span>
                     {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.title')]) }}
                 </div>
-                <div class="col-sm-4">
-                    <label></label>
-                    <div class="checkbox">
-                        <label>
-                            {{ Form::checkbox('is_home', true, old('is_home'), ['data-toggle'=>'toggle', 'data-size' => 'small']) }} <b>{{ __('repositories.label.is_home') }}</b>
-                        </label>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="form-group">
             <div class="row">
                 <div class="col-md-8">
-                    {{ Form::label('price', __('repositories.label.price'), ['class'=>'control-label']) }}<span class="require">*</span>
-                    {{ Form::text('price', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.price')]) }}
-                </div>
-                <div class="col-md-4">
                     {{ Form::label('sort', __('repositories.label.sort'), ['class'=>'control-label']) }}<span class="require">*</span>
                     {{ Form::number('sort', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.sort')]) }}
                 </div>
@@ -61,16 +49,21 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('intro', __('repositories.label.intro'), ['class'=>'control-label']) }}
-            {{ Form::textarea('intro', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => __('repositories.label.intro')]) }}
+            {{ Form::label('description', __('repositories.label.description'), ['class'=>'control-label']) }}
+            {{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => 8, 'placeholder' => __('repositories.label.description')]) }}
         </div>
-
     </div>
     <div class="col-sm-4">
-        {{ Form::label('name', __('repositories.label.image') . __('repositories.image_size.product'), ['class' => 'control-label']) }}<span class="require">*</span>
-        @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_src) ? $item->image_src : null])
+        {{ Form::label('name', __('repositories.label.image_before_src') . __('repositories.image_size.product'), ['class' => 'control-label']) }}<span class="require">*</span>
+        @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_before_src) ? $item->image_before_src : null, 'elementFields' => 'image_bf-upload'])
         @slot('uploadFields')
-            {{ Form::file('image', ['id' => 'image']) }}
+            {{ Form::file('image_before_src', ['id' => 'image_before_src']) }}
+        @endslot
+        @endcomponent
+        {{ Form::label('name', __('repositories.label.image_after_src') . __('repositories.image_size.product'), ['class' => 'control-label']) }}<span class="require">*</span>
+        @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_after_src) ? $item->image_after_src : null, 'elementFields' => 'image_af-upload'])
+        @slot('uploadFields')
+            {{ Form::file('image_after_src', ['id' => 'image_after_src']) }}
         @endslot
         @endcomponent
     </div>

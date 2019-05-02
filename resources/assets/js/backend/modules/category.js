@@ -102,7 +102,6 @@ class Category {
         }
         $li.find('.jqtree-element')
           .append('<div class="btn-group pull-right tools">\
-            <a href="'+laroute.route('backend.category.collection', {category: node.id})+'" class="btn btn-info btn-xs"><i class="ion-images"></i></a> \
             <a href="'+laroute.route('backend.category.edit', {category: node.id})+'" class="btn btn-default btn-xs"><i class="ion-edit"></i></a> \
             <a href="'+laroute.route('backend.category.destroy', {category: node.id})+'" class="btn btn-xs btn-danger delete-action"><i class="ion-close-circled"></i></a>\
             </div>');

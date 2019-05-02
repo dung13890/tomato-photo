@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Contracts\Repositories\SlideRepository;
 use App\Contracts\Repositories\ContactRepository;
-use App\Contracts\Repositories\ProductRepository;
+use App\Contracts\Repositories\CategoryRepository;
 use App\Http\Requests\Frontend\ContactRequest;
 use App\Jobs\Contact\UserStoreJob;
 
@@ -13,17 +13,17 @@ class HomeController extends FrontendController
 {
     protected $repoSlide;
     protected $repoContact;
-    protected $repoProduct;
+    protected $repoCategory;
 
     public function __construct(
         SlideRepository $slide,
         ContactRepository $contact,
-        ProductRepository $product
+        CategoryRepository $category
     ) {
         parent::__construct();
         $this->repoSlide = $slide;
         $this->repoContact = $contact;
-        $this->repoProduct = $product;
+        $this->repoCategory = $category;
     }
     public function index(Request $request)
     {
@@ -38,10 +38,11 @@ class HomeController extends FrontendController
             ['first_name', 'last_name', 'company', 'avatar', 'message']
         );
 
-        $this->compacts['products'] = $this->repoProduct->getHome(
-            config('common.product.limit'),
-            ['id', 'name', 'image_src', 'image_title', 'intro', 'price', 'category_id']
-        );
+        $this->compacts['categories'] = $this->repoCategory
+            ->getRandom(
+                config('common.category.limit'),
+                ['id', 'name', 'image_src', 'description']
+            );
 
         return $this->viewRender();
     }

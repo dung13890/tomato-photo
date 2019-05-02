@@ -45,11 +45,9 @@
                                 <tr>
                                     <th style="display:none">ID</th>
                                     <th>{{ __('repositories.label.name') }}</th>
-                                    <th>{{ __('repositories.label.price') }}</th>
-                                    <th>{{ __('repositories.label.intro') }}</th>
-                                    <th>{{ __('repositories.title.image_src') }}</th>
+                                    <th>{{ __('repositories.title.image_before_src') }}</th>
+                                    <th>{{ __('repositories.title.image_after_src') }}</th>
                                     <th>{{ __('repositories.title.category') }}</th>
-                                    <th>{{ __('repositories.label.is_home') }}</th>
                                     <th>{{ __('repositories.label.locked') }}</th>
                                     <th>{{ __('repositories.label.action') }}</th>
                                 </tr>

@@ -20,11 +20,9 @@ class IndexJob extends Job
     protected $dataSelect = [
         'id',
         'name',
-        'intro',
-        'price',
-        'image_src',
+        'image_before_src',
+        'image_after_src',
         'locked',
-        'is_home',
         'category_id',
     ];
 
@@ -52,8 +50,10 @@ class IndexJob extends Job
         $this->columnDatatable($datatables, $repository->model);
         $datatables->addColumn('category', function ($item) {
             return $item->category->name;
-        })->editColumn('image_src', function ($item) {
-            return publicSrc($item->image_src);
+        })->editColumn('image_before_src', function ($item) {
+            return publicSrc($item->image_before_src);
+        })->editColumn('image_after_src', function ($item) {
+            return publicSrc($item->image_after_src);
         });
 
         return $datatables->make(true);

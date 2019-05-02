@@ -36,15 +36,11 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::get('contact/create', 'HomeController@create')->name('home.create');
         Route::post('contact', 'HomeController@store')->name('home.store');
         Route::post('summernote/image', 'HomeController@summernoteImage')->name('summernote.image');
-        Route::post('/collection/{category}', 'HomeController@storeCollection')->name('home.store.collection');
-        Route::delete('/collection/{id}', 'HomeController@deleteCollection')->name('home.delete.collection');
         Route::resource('user', 'UserController');
         Route::resource('category', 'CategoryController', [
             'except' => ['index', 'create', 'show']
         ]);
         Route::get('category/type/{type}', 'CategoryController@type')->name('category.type');
-        Route::get('category/{category}/collection', 'CategoryController@collection')->name('category.collection');
-        Route::patch('category/{category}/collection', 'CategoryController@updateCollection')->name('category.update.collection');
         Route::resource('post', 'PostController');
         Route::resource('product', 'ProductController');
         Route::resource('slide', 'SlideController');
