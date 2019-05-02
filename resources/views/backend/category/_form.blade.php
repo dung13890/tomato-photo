@@ -18,8 +18,12 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('title', __('repositories.label.title'), [ 'class' => 'control-label' ]) }}<span class="require">*</span>
-    {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.name')]) }}
+    {{ Form::label('name', __('repositories.label.image') . __('repositories.image_size.category'), ['class' => 'control-label']) }}<span class="require">*</span>
+    @component('backend._partials.components.uploadfile', ['imgFields' => (isset($item) && $item->image_src) ? $item->image_src : null])
+    @slot('uploadFields')
+        {{ Form::file('image', ['id' => 'image']) }}
+    @endslot
+    @endcomponent
 </div>
 
 <div class="form-group">

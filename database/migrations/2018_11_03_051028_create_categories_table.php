@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('ceo_description', 200)->nullable();
             $table->string('ceo_keywords', 150)->nullable();
             $table->string('name', 100);
-            $table->string('title');
+            $table->string('image_src')->nullable();
             $table->string('slug', 100)->index()->unique();
             $table->char('type', 20)->default('product');
             $table->string('collection_title')->nullable();

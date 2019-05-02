@@ -35,7 +35,7 @@ return [
         'image_src' => 'Hình ảnh',
         'browse' => 'Chọn ảnh...',
         'social' => 'Mạng xã hội',
-        'contact' => 'Liên hệ',
+        'contact' => 'Đánh giá',
         'menu' => 'Menu',
         'introduce' => 'Giới thiệu',
         'distributor' => 'Hệ thống phân phối',
@@ -197,7 +197,7 @@ return [
     ],
 
     'home' => [
-        'name' => 'Liên hệ',
+        'name' => 'Đánh giá',
         'resource' => [
             'index' => 'Thông tin liên hệ',
             'create' => 'Tạo mới liên hệ',
@@ -219,6 +219,7 @@ return [
         'avatar' => '( 155x155 )',
         'blog' => '( 540x135 )',
         'product' => '( 255x169 )',
+        'category' => '( 350x233 )',
         'product_ba' => '( 960x450 )',
     ],
 
