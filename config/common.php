@@ -3,7 +3,7 @@
 return [
     'category' => [
         'type' => ['product'],
-        'limit' => 5,
+        'limit' => 6,
     ],
     'slide' => [
         'limit' => 5,

@@ -31,11 +31,14 @@ class StoreJob extends Job
     {
         $data = array_only($this->params, $repository->model->getFillable());
         $data['locked'] = $data['locked'] ?? false;
-        $data['is_home'] = $data['is_home'] ?? false;
 
-        $image = $this->uploadFile($this->params['image']);
-        $data['image_src'] = $image->src;
-        $data['image_title'] = $image->title;
+        $imageBefore = $this->uploadFile($this->params['image_before_src']);
+        $data['image_before_src'] = $imageBefore->src;
+        $data['image_before_title'] = $imageBefore->title;
+
+        $imageAfter = $this->uploadFile($this->params['image_after_src']);
+        $data['image_after_src'] = $imageAfter->src;
+        $data['image_after_title'] = $imageAfter->title;
 
         $repository->create($data);
     }

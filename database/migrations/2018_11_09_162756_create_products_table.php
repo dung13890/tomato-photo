@@ -16,15 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->string('image_src')->nullable();
-            $table->string('image_title')->nullable();
-            $table->string('image_ba_src')->nullable();
-            $table->string('image_ba_title')->nullable();
+            $table->string('image_before_src')->nullable();
+            $table->string('image_after_src')->nullable();
+            $table->string('image_before_title')->nullable();
+            $table->string('image_after_title')->nullable();
             $table->text('description')->nullable();
-            $table->text('intro')->nullable();
             $table->integer('sort')->default(0);
-            $table->string('price')->nullable();
-            $table->boolean('is_home')->default(false);
             $table->boolean('locked')->default(false);
             $table->integer('category_id')->index()->unsigned();
             $table->timestamps();

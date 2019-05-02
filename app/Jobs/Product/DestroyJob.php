@@ -25,8 +25,12 @@ class DestroyJob extends Job
      */
     public function handle(ProductRepository $repository)
     {
-        if (!empty($this->item->image_src)) {
-            $this->deleteSource($this->item->image_src);
+        if (!empty($this->item->image_before_src)) {
+            $this->deleteSource($this->item->image_before_src);
+        }
+
+        if (!empty($this->item->image_after_src)) {
+            $this->deleteSource($this->item->image_after_src);
         }
 
         return $repository->delete($this->item);

@@ -9,21 +9,19 @@ class Product {
     let columns = [
       { data: 'id', name: 'id', visible: false },
       { data: 'name', name: 'name'},
-      { data: 'price', name: 'price'},
-      { data: 'intro', name: 'intro'},
-      { data: 'image_src',
-        name: 'image_src',
+      { data: 'image_before_src',
+        name: 'image_before_src',
         render:(data, type, row) => {
-          return `<img src=${row.image_src} class="img-thumbnail" />`;
+          return `<img src=${row.image_before_src} class="img-thumbnail" />`;
+        }
+      },
+      { data: 'image_after_src',
+        name: 'image_after_src',
+        render:(data, type, row) => {
+          return `<img src=${row.image_after_src} class="img-thumbnail" />`;
         }
       },
       { data: 'category', name: 'category'},
-      { data: 'is_home',
-        name: 'is_home',
-        render:function (data, type, row) {
-          return row.is_home == 1 ? '<span class="label label-primary">ON</span>' : '';
-        }
-      },
       { data: 'locked',
         name: 'locked',
         render:function (data, type, row) {
@@ -55,10 +53,10 @@ class Product {
 
   form () {
     var _$ = window.jQuery;
-    var uploadfile = new Uploadfile();
-    uploadfile.init();
-    var uploadfileBa = new Uploadfile('#image_ba', '#image_ba-upload');
-    uploadfileBa.init();
+    var uploadfileBf = new Uploadfile('#image_before_src', '#image_bf-upload');
+    uploadfileBf.init();
+    var uploadfileAf = new Uploadfile('#image_after_src', '#image_af-upload');
+    uploadfileAf.init();
   }
 }
 

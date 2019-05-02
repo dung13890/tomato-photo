@@ -16,17 +16,17 @@ class ProductRequest extends Request
         if ($this->product) {
             return [
                 'name' => 'required|min:2|max:175',
-                'price' => 'required|min:2|max:175',
                 'category_id' => 'required|integer|not_in:0',
-                'image'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'image_before_src'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'image_after_src'=> 'nullable|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
                 'sort'=> 'nullable|integer',
             ];
         } else {
             return [
                 'name' => 'required|min:2|max:175',
-                'price' => 'required|min:2|max:175',
                 'category_id' => 'required|integer|not_in:0',
-                'image'=> 'required|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'image_before_src'=> 'required|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
+                'image_after_src'=> 'required|image|mimes:jpeg,jpg,gif,bmp,png|max:1200',
                 'sort'=> 'nullable|integer',
             ];
         }
@@ -38,7 +38,8 @@ class ProductRequest extends Request
             'name' => __('repositories.label.name'),
             'price' => __('repositories.label.price'),
             'category_id' => __('repositories.label.category_id'),
-            'image' => __('repositories.label.image'),
+            'image_before_src' => __('repositories.label.image_before_src'),
+            'image_after_src' => __('repositories.label.image_after_src'),
             'sort' => __('repositories.label.sort'),
         ];
     }
