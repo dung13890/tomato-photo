@@ -125,6 +125,7 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                     // Optional parameters
                     direction: 'vertical',
                     loop: true,
+                    autoHeight: true,
 
                     // Navigation arrows
                     navigation: {
@@ -143,6 +144,7 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                     // Optional parameters
                     direction: 'horizontal',
                     loop: true,
+                    autoHeight: true,
 
                     // Navigation arrows
                     navigation: {

@@ -6,10 +6,10 @@
 
 @section('content')
     <main class="site-main blog-wrapper">
-        <div class="page-header" style="">
+        <div class="page-header" style="background-image: url({{ publicSrc($configs['blog']['banner']) }});">
             <div class="container">
                 <h2 class="page-header-title">Blog Detail</h2>
-                <p class="page-header-desc">This is blog detail.</p>
+                <p class="page-header-desc">{{ $configs['blog']['description'] }}</p>
             </div>
         </div>
         <div class="page-content">
@@ -20,7 +20,7 @@
                             <div class="post-content">
                                 <div class="post-info">
                                     <span class="icon-date"><img width="20" height="17" alt="calendar icon" src="/images/static/calendar.svg" /></span>
-                                    <span class="post-date">22-08-2019</span>
+                                    <span class="post-date">{{ $post->updated_at->format(config('common.date.blog')) }}</span>
                                 </div>
                                 <h1 class="post-title">{{ $post->name }}</h1>
                                 <div class="post-description">

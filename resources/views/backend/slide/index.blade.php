@@ -44,6 +44,7 @@
                             <thead>
                                 <tr>
                                     <th style="display:none">ID</th>
+                                    <th>{{ __('repositories.label.title') }}</th>
                                     <th>{{ __('repositories.label.description') }}</th>
                                     <th>{{ __('repositories.title.image_src') }}</th>
                                     <th>{{ __('repositories.title.category') }}</th>

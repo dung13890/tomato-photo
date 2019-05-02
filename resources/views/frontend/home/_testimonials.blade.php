@@ -11,7 +11,7 @@
                         <div class="testimonial-item swiper-slide slide-item">
                             <div class="row align-items-center">
                                 <div class="col-sm-12 testimonial-image">
-                                    <img src="{{ $testimonial->avatar }}" alt="{{ $testimonial->first_name }}" />
+                                    <img src="{{ publicSrc($testimonial->avatar) }}" alt="{{ $testimonial->first_name }}" />
                                 </div>
                                 <div class="col-sm-12 mt-3 text-center">
                                     <div class="testimonial-content">

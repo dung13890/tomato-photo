@@ -41,7 +41,7 @@ class MenusSeeder extends Seeder
 
         ]);
         if (App::environment('local')) {
-            factory(Menu::class, 10)->create();
+            factory(Menu::class, 2)->create();
         }
     }
 }

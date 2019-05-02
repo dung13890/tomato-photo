@@ -19,7 +19,7 @@
                         <p>Our team located in Vietnam, serves you in a wide range of services including photo editing, floor plans, virtual staging and video listing as a best center for your promotional campaigns, expand your photography bussiness. Every job is processed with calibrated screens, top softwares, high connection internet, fast turnaround time, affordable price.</p>
                         <p>Whether you are in real estate and need high-quality images to showcase a home or are presenting products to the retail market, Our will work with your images to get the best result for your needs. High quality photos are proven to increase sales and our editors will make your product or listing stand out from the competition.</p>
                     </div>
-                    <div class="swiper-general swiper-general-images swiper-container mt-5">
+                    {{-- <div class="swiper-general swiper-general-images swiper-container mt-5">
                         <div class="swiper-wrapper">
                             @if (count($slides))
                                 @foreach ($slides as $slide)
@@ -35,7 +35,7 @@
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
                         <div class="swiper-button-next"><i class="ion-ios-arrow-forward"></i></div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

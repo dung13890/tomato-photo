@@ -20,13 +20,13 @@
         <div class="row align-items-center">
             <ul class="col-md-12">
                 <li class="email">
-                    <a href="mailto:example@domain.com"><i class="ion ion-ios-mail"></i>example@domain.com</a>
+                    <a href="mailto:{{ $configs['email'][0] ?? null }}"><i class="ion ion-ios-mail"></i>{{ $configs['email'][0] ?? null }}</a>
                 </li>
                 <li class="skype">
-                    <a href="skype:skype_name?chat"><i class="ion ion-logo-skype"></i>skype_name</a>
+                    <a href="skype:{{ $configs['skype'][0] ?? null }}?chat"><i class="ion ion-logo-skype"></i>{{ $configs['skype'][0] ?? null }}</a>
                 </li>
                 <li class="hotline">
-                    <a href="tel:0123456789"><i class="ion ion-ios-call"></i>+84 123 456789</a>
+                    <a href="tel:{{ $configs['phone'][0] ?? null }}"><i class="ion ion-ios-call"></i>{{ $configs['phone'][0] ?? null }}</a>
                 </li>
                 <li class="time"><i class="ion ion-ios-alarm"></i> <span id="timing"></span> Vietnam Time</li>
             </ul>
@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <a class="site-logo col-6 col-sm-6 col-md-6 col-lg-2" href="/">
-                    <img class="logo" src="{{ asset('images/static/icon/logo.png') }}" alt="Site brand">
+                    <img class="logo" src="{{ asset('images/static/logo.png') }}" alt="Site brand">
                 </a>
                 <div class="main-menu col-6 col-sm-6 col-md-6 col-lg-10">
                     <div id="offcanvas-toggler" class="d-lg-none d-xl-none">

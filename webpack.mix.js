@@ -30,7 +30,6 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .sass('resources/assets/sass/backend/modules/config.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
 mix.js('resources/assets/vue/dropzone.js', 'public/assets/vue/');
-mix.copyDirectory('resources/assets/img', 'public/assets/img');
 mix.copyDirectory('resources/assets/seeds', 'public/statics/files/seeds');
 mix.copyDirectory('resources/assets/images/static', 'public/images/static');
 mix.copy('resources/assets/bower/summernote/dist/summernote.min.js', 'public/assets/js/backend/summernote.min.js');
@@ -46,7 +45,5 @@ mix.js('resources/assets/js/frontend.js', 'public/assets/js')
         'lodash',
         'swiper',
         'wow.js',
-        // 'jquery-sticky',
-        // 'flexslider',
         'lightgallery'
     ]);

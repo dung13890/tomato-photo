@@ -5,7 +5,8 @@ use App\Eloquent\Slide;
 
 $factory->define(Slide::class, function (Faker $faker) {
     return [
-        'description' => implode(", " ,$faker->words(4, false)),
+        'title' => implode(", " ,$faker->words(4, false)),
+        'description' => $faker->realText,
         'locked' => rand(0, 1),
     ];
 });
