@@ -17,7 +17,7 @@ class UsersSeeder extends Seeder
             'username' => 'admin',
             'name' => 'Admin',
             'email' => 'admin@we-edit.com',
-            'password' => 'secret',
+            'password' => 'tomato@123',
         ]);
 
         if (env('APP_ENV') == 'local' || env('APP_ENV') == 'dev') {

@@ -53,7 +53,7 @@
                 {{ Form::close() }}
                 <div class="card card-text hidden-xs">
                     <div class="card-block text-center">
-                        <h2>Tomato</h2>
+                        <img src="{{ asset('images/static/logo.png') }}" alt="Site brand" class="logo img-responsive">
                         <p>{{ __('repositories.text.sign_in_to_addr') }}</p>
                         <p>{{ __('repositories.text.sign_in_to_phon') }}</p>
                     </div>

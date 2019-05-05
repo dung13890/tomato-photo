@@ -20,6 +20,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('assets/js/backend.js') }}"></script>
+    {{ Html::script(mix('assets/js/manifest.js')) }}
+    {{ Html::script(mix('assets/js/vendor.js')) }}
+    {{ Html::script(mix('/assets/js/backend.js')) }}
 </body>
 </html>

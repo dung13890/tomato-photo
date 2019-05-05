@@ -32,25 +32,42 @@ class SlidesSeeder extends Seeder
             [
                 'title' => 'About slide 01',
                 'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-                'image_src' => 'seeds/slides/slide-about-01.jpg',
+                'image_src' => 'seeds/about-us/About.jpg',
+                'image_title' => 'slide-about.jpg',
+                'category_id' => -1,
+            ],
+            [
+                'title' => 'About slide 02',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+                'image_src' => 'seeds/about-us/slide1.jpg',
                 'image_title' => 'slide-about-01.jpg',
                 'category_id' => -1,
             ],
             [
                 'title' => 'About slide 02',
                 'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-                'image_src' => 'seeds/slides/slide-about-02.jpg',
+                'image_src' => 'seeds/about-us/slide2.jpg',
                 'image_title' => 'slide-about-02.jpg',
+                'category_id' => -1,
+            ],
+            [
+                'title' => 'About slide 02',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+                'image_src' => 'seeds/about-us/slide3.jpg',
+                'image_title' => 'slide-about-03.jpg',
+                'category_id' => -1,
+            ],
+            [
+                'title' => 'About slide 02',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+                'image_src' => 'seeds/about-us/slide4.jpg',
+                'image_title' => 'slide-about-04.jpg',
                 'category_id' => -1,
             ],
         ];
 
         app(Slide::class)->insert($data);
 
-        // foreach (Category::all() as $category) {
-        //     data_set($data, '*.category_id', $category->id);
-        //     app(Slide::class)->insert($data);
-        // }
         if (App::environment('local')) {
             factory(Slide::class, 0)->create();
         }

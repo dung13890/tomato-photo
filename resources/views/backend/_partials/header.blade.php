@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default app-header">
     <button class="navbar-toggler" type="buttom">&#9776;</button>
     <div class="navbar-brand">
-        <a class="brand" target="_blank" href="{{ route('home') }}">{{ env('APP_NAME') }}</a>
+        <a class="brand" target="_blank" href="{{ route('home') }}"><img src="{{ asset('images/static/logo.png') }}" alt="Site brand" class="logo img-responsive"></a>
     </div>
 
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ $me->name }} <span class="caret"></span></a>
