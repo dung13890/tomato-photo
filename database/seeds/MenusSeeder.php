@@ -21,6 +21,12 @@ class MenusSeeder extends Seeder
                 'locked' => true,
             ],
             [
+                'name' => 'services',
+                'url' => parse_url(route('category.show', 'services'), PHP_URL_PATH),
+                'sort' => 0,
+                'locked' => true,
+            ],
+            [
                 'name' => 'blog',
                 'url' => parse_url(route('blog'), PHP_URL_PATH),
                 'sort' => 1,
@@ -41,7 +47,7 @@ class MenusSeeder extends Seeder
 
         ]);
         if (App::environment('local')) {
-            factory(Menu::class, 2)->create();
+            factory(Menu::class, 0)->create();
         }
     }
 }

@@ -7,4 +7,4 @@
 
 import '../bootstrap';
 import './_template';
-// import './_vue';
+import './_vue';

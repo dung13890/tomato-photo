@@ -44,7 +44,7 @@
     }
 
     &.swiper-general-images {
-        height: 500px;
+        // height: 500px;
 
         &.swiper-container {
             .swiper-button-next,
@@ -388,8 +388,8 @@
 
 // Swiper gallery
 .swiper-gallery {
-    // Follow with of image.
-    max-width: 800px;
+    // Follow with of image. 3x2 : 900:600;
+    max-width: 900px;
     margin: auto;
 
     .swiper-slide {

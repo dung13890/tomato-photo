@@ -310,7 +310,7 @@
 }
 
 .offcanvas-menu {
-    background-color: $color-secondary;
+    background-color: #555;
     width: 320px;
     height: 100%;
     position: fixed;
@@ -318,6 +318,7 @@
     left: -320px;
     padding-bottom: 40px;
     overflow-y: auto;
+    box-shadow: 3px 0 20px 5px rgba(0,0,0,0.15);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     z-index: 10000;
@@ -330,7 +331,7 @@
         font-weight: 600;
         text-transform: uppercase;
         color: #fff;
-        background-color: $color-primary;
+        background-color: $color-secondary;
         overflow: hidden;
     }
 
@@ -486,7 +487,7 @@
                 width: 100%;
                 display: inline-block;
                 padding: 10px 20px;
-                border-bottom: 1px solid darken($color-secondary, 10%);
+                border-bottom: 1px solid #666;
             }
 
             &.active {

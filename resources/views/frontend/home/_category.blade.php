@@ -8,14 +8,14 @@
             @foreach ($categories as $category)
             <li class="item col-md-4 col-sm-6">
                 <div class="media row align-items-center">
-                    <a class="col-lg-12" href="#">
+                    <a class="col-lg-12" href="{{ route('category.show', $category->slug) }}">
                         <img src="{{ publicSrc($category->image_src) }}" alt="{{ $category->name }}" />
                     </a>
                     <div class="col-lg-12 media-body">
-                        <a href="#">
+                        <a href="{{ route('category.show', $category->slug) }}">
                             <h3>{{ $category->name }}</h3>
                         </a>
-                        <p>{{ str_limit($category->description, 250) }}</p>
+                        <p>{{ str_limit($category->description, 150) }}</p>
                     </div>
                 </div>
             </li>

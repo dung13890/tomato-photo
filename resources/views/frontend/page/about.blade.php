@@ -7,7 +7,7 @@
         <div class="page-header blog-bg-image" style="">
             <div class="container">
                 <h2 class="page-header-title">About us</h2>
-                <p class="page-header-desc">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                <p class="page-header-desc">{{ $configs['about']['description'] }}</p>
             </div>
         </div>
 
@@ -15,27 +15,30 @@
             <div class="container">
                 <div class="section-content text-center">
                     <div class="section-content-wrapper">
-                        <h1 class="color-primary">Company name - Who are we?</h1>
-                        <p>Our team located in Vietnam, serves you in a wide range of services including photo editing, floor plans, virtual staging and video listing as a best center for your promotional campaigns, expand your photography bussiness. Every job is processed with calibrated screens, top softwares, high connection internet, fast turnaround time, affordable price.</p>
-                        <p>Whether you are in real estate and need high-quality images to showcase a home or are presenting products to the retail market, Our will work with your images to get the best result for your needs. High quality photos are proven to increase sales and our editors will make your product or listing stand out from the competition.</p>
+                        <h1 class="color-primary">WHO ARE WE?</h1>
+                        <p>{!! $configs['about']['information'] !!}</p>
                     </div>
-                    {{-- <div class="swiper-general swiper-general-images swiper-container mt-5">
-                        <div class="swiper-wrapper">
-                            @if (count($slides))
-                                @foreach ($slides as $slide)
-                                <div class="swiper-slide slide-item">
-                                    <img src="{{ $slide->image_src }}" alt="{{ $slide->description }}" />
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <div class="swiper-general swiper-general-images swiper-container mt-5">
+                                <div class="swiper-wrapper">
+                                    @if (count($__about_slides))
+                                        @foreach ($__about_slides as $slide)
+                                        <div class="swiper-slide slide-item">
+                                            <img src="{{ publicSrc($slide->image_src) }}" alt="{{ $slide->description }}" />
+                                        </div>
+                                        @endforeach
+                                    @endif
                                 </div>
-                                @endforeach
-                            @endif
+
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+                                <div class="swiper-button-next"><i class="ion-ios-arrow-forward"></i></div>
+                            </div>
                         </div>
-
-                        <div class="swiper-pagination"></div>
-
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
-                        <div class="swiper-button-next"><i class="ion-ios-arrow-forward"></i></div>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </section>
@@ -55,18 +58,6 @@
                                         <div class="col-5">
                                             <span class="color-primary">CEO</span>
                                             <h5 class="mt-0 mb-1">Mr. Peter</h5>
-                                            <ul class="social horizontal">
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-facebook" aria-label="Facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-twitter" aria-label="Twitter"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="col-7">
                                             <p>2011年6月: ハノイ工科大学卒業</p>
@@ -83,18 +74,6 @@
                                         <div class="col-5">
                                             <span class="color-primary">Designer</span>
                                             <h5 class="mt-0 mb-1">Ms. Lucky</h5>
-                                            <ul class="social horizontal">
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-facebook" aria-label="Facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-twitter" aria-label="Twitter"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="col-7">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
                                     </div>
@@ -107,18 +86,6 @@
                                         <div class="col-5">
                                             <span class="color-primary">Development</span>
                                             <h5 class="mt-0 mb-1">Mr. Kevin</h5>
-                                            <ul class="social horizontal">
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-facebook" aria-label="Facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" target="_blank">
-                                                        <i class="ion ion-logo-twitter" aria-label="Twitter"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="col-7">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
                                     </div>

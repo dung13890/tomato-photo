@@ -1,4 +1,5 @@
 {
+    "/assets/js/frontend.js": "/assets/js/frontend.js",
     "/assets/js/backend.js": "/assets/js/backend.js",
     "/assets/css/backend/app.css": "/assets/css/backend/app.css",
     "/assets/css/backend/category.css": "/assets/css/backend/category.css",
@@ -11,7 +12,6 @@
     "/assets/css/backend/login.css": "/assets/css/backend/login.css",
     "/assets/css/frontend/app.css": "/assets/css/frontend/app.css",
     "/assets/vue/dropzone.js": "/assets/vue/dropzone.js",
-    "/assets/js/frontend.js": "/assets/js/frontend.js",
     "/assets/js/backend/modules/slide.js": "/assets/js/backend/modules/slide.js",
     "/assets/js/backend/modules/product.js": "/assets/js/backend/modules/product.js",
     "/assets/js/backend/modules/post.js": "/assets/js/backend/modules/post.js",

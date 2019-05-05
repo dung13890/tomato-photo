@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 wow fadeInLeft">
-                <img src="images/static/home-about.jpg" alt="">
+                <img src="{{ publicSrc($configs['home']['who_we_are_image']) }}" alt="">
             </div>
             <div class="col-lg-6 wow fadeInRight">
                 <div class="section-title">

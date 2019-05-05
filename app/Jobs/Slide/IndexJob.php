@@ -49,7 +49,7 @@ class IndexJob extends Job
         });
         $this->columnDatatable($datatables, $repository->model);
         $datatables->addColumn('category', function ($item) {
-            return $item->category_id ? $item->category->name : __('repositories.label.is_home');
+            return !$item->category_id ? __('repositories.label.is_home') : $item->category_id === -1 ? __('repositories.page.about') : $item->category->name;
         })->editColumn('image_src', function ($item) {
             return publicSrc($item->image_src);
         });

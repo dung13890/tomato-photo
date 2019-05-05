@@ -19,6 +19,11 @@
         </div>
         <div class="form-group">
             {{ Form::label('home', 'WHO WE ARE?', ['class'=>'control-label']) }}
+            @component('backend._partials.components.uploadfile', ['imgFields' => $items->keyBy('key')['home']['value']['who_we_are_image'] ?? null])
+            @slot('uploadFields')
+                {{ Form::file('home[who_we_are_image]', ['id' => 'image']) }}
+            @endslot
+            @endcomponent
             {{ Form::textarea('home[who_we_are]', $items->keyBy('key')['home']['value']['who_we_are'] ?? null, ['class' => 'form-control', 'rows' => 6]) }}
         </div>
         <div class="form-group">

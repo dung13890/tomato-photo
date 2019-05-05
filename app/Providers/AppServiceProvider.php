@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use App\Contracts\Repositories\ConfigRepository;
 use App\Contracts\Repositories\MenuRepository;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Contracts\Repositories\SlideRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -51,8 +52,9 @@ class AppServiceProvider extends ServiceProvider
                 return app(MenuRepository::class)->getData(['id', 'name', 'url', 'parent_id']);
             }));
             $view->with('__categories', Cache::remember('__categories', 60, function () {
-                return app(CategoryRepository::class)->getRandom(config('common.category.limit'), ['name', 'slug']);
+                return app(CategoryRepository::class)->getRandom(5, ['name', 'slug']);
             }));
+            $view->with('__about_slides', app(SlideRepository::class)->getDataByCategory(config('common.category.limit'), -1));
         });
     }
 }

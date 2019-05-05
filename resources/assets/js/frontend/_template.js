@@ -247,7 +247,6 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                 general();
                 offcanvas();
                 if (elExists(scrollEl)) scrollTop(scrollEl);
-                // if (elExists(stickyEl)) sticky(stickyEl);
                 if (elExists(sliderEl)) slider(sliderEl);
                 if (elExists(generalSliderEl)) generalSlider(generalSliderEl);
                 if (elExists(swiperGalleryEl)) swiperGallery(swiperGalleryEl);

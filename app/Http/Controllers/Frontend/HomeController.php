@@ -41,7 +41,7 @@ class HomeController extends FrontendController
         $this->compacts['categories'] = $this->repoCategory
             ->getRandom(
                 config('common.category.limit'),
-                ['id', 'name', 'image_src', 'description']
+                ['id', 'name', 'slug', 'image_src', 'description']
             );
 
         return $this->viewRender();

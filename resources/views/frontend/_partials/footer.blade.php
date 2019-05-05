@@ -24,6 +24,7 @@
                 </div>
                 <div class="f-col col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <h3 class="f-title">Our Instagram</h3>
+                    <instagram-gallery />
                     <div id="lightgallery-flickr" class="gallery-inner column-3 overflow-hidden">
                         <a href="#" class="single-gallery-items" target="_blank">
                             <img src="/images/static/temp/flickr/01.jpg" alt="">
