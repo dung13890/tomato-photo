@@ -12,7 +12,6 @@ return [
         'limit' => 5,
     ],
     'about' => [
-        'name' => 'about',
         'limit' => 5,
     ],
     'product' => [

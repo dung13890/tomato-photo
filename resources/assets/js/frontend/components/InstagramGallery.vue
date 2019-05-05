@@ -1,43 +1,26 @@
 <template>
     <div class="instagram-gallery">
-        <div class="gallery-inner column-3">
-            <a v-for="item in items" :href="item.link" class="single-gallery-items" target="_blank">
-                <img :src="item.image" alt="">
+        <div class="gallery-inner column-3 overflow-hidden">
+            <a v-for="item in items" :href="item.link || '#'" class="single-gallery-items" target="_blank">
+                <img :src="item.thumbnail" :alt="item.caption">
             </a>
         </div>
     </div>
 </template>
 
 <script>
+    import { getInstagram } from '../_api';
+
     export default {
+        props: {
+          username: {
+            type: String,
+            default: ''
+          }
+        },
         data() {
             return {
-                items: [
-                    {
-                        image: '/images/static/temp/flickr/01.jpg',
-                        link: '#'
-                    },
-                    {
-                        image: '/images/static/temp/flickr/02.jpg',
-                        link: '#'
-                    },
-                    {
-                        image: '/images/static/temp/flickr/03.jpg',
-                        link: '#'
-                    },
-                    {
-                        image: '/images/static/temp/flickr/04.jpg',
-                        link: '#'
-                    },
-                    {
-                        image: '/images/static/temp/flickr/05.jpg',
-                        link: '#'
-                    },
-                    {
-                        image: '/images/static/temp/flickr/06.jpg',
-                        link: '#'
-                    }
-                ]
+                items: []
             };
         },
         mounted() {
@@ -45,18 +28,13 @@
         },
         methods: {
             async fetchData() {
-                // const response = await window.axios.get('https://instagram.com/chanelcartoon01');
-                const response = await window.axios({
-                    method:'post',
-                    url:'https://instagram.com/chanelcartoon01',
-                    headers: {
-                        // crossdomain: true
-                        'Access-Control-Allow-Origin': '*'
-                        // 'Content-Type': 'application/json',
-                    }
-                });
+                const res = await getInstagram(this.username);
 
-                console.log(response);
+                console.log('Res: ', res);
+
+                if (res.status) {
+                    this.items = res.payload;
+                }
             }
         }
     }

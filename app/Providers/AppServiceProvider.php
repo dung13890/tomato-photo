@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('__categories', Cache::remember('__categories', 60, function () {
                 return app(CategoryRepository::class)->getRandom(5, ['name', 'slug']);
             }));
-            $view->with('__about_slides', app(SlideRepository::class)->getDataByCategory(config('common.category.limit'), -1));
+            $view->with('__about_slides', app(SlideRepository::class)->getDataByCategory(config('common.about.limit'), -1));
         });
     }
 }
