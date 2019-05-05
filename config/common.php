@@ -11,6 +11,10 @@ return [
     'contact' => [
         'limit' => 5,
     ],
+    'about' => [
+        'name' => 'about',
+        'limit' => 5,
+    ],
     'product' => [
         'limit' => 6,
     ],

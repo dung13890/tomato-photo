@@ -9,7 +9,7 @@
     @stack('sufstyles')
 </head>
 <body id="site-body" class="offcanvas-init">
-    <div class="site-wrapper">
+    <div id="app" class="site-wrapper">
         {{-- <div class="site-overlay"></div> --}}
         @include('frontend._partials.header')
 

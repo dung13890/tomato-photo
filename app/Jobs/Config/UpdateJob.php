@@ -42,6 +42,13 @@ class UpdateJob extends Job
             $data['logo'] = [$logo->src];
         }
 
+        if (!empty($this->params['home']['who_we_are_image'])) {
+            $homeWhoWeAreImage = $this->uploadFile($this->params['home']['who_we_are_image']);
+            $data['home']['who_we_are_image'] = $homeWhoWeAreImage->src;
+        } else {
+            $data['home']['who_we_are_image'] = $items->keyBy('key')['home']['value']['who_we_are_image'] ?? null;
+        }
+
         if (!empty($this->params['about']['banner'])) {
             $aboutBanner = $this->uploadFile($this->params['about']['banner']);
             $data['about']['banner'] = $aboutBanner->src;

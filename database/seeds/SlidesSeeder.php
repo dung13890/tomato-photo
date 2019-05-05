@@ -20,20 +20,37 @@ class SlidesSeeder extends Seeder
                 'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
                 'image_src' => 'seeds/slides/slide-01.jpg',
                 'image_title' => 'slide-01.jpg',
+                'category_id' => 0,
             ],
             [
                 'title' => 'PHOTOGRAPHY CREATIVE',
                 'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
                 'image_src' => 'seeds/slides/slide-02.jpg',
                 'image_title' => 'slide-02.jpg',
+                'category_id' => 0,
+            ],
+            [
+                'title' => 'About slide 01',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+                'image_src' => 'seeds/slides/slide-about-01.jpg',
+                'image_title' => 'slide-about-01.jpg',
+                'category_id' => -1,
+            ],
+            [
+                'title' => 'About slide 02',
+                'description' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
+                'image_src' => 'seeds/slides/slide-about-02.jpg',
+                'image_title' => 'slide-about-02.jpg',
+                'category_id' => -1,
             ],
         ];
+
         app(Slide::class)->insert($data);
 
-        foreach (Category::all() as $category) {
-            data_set($data, '*.category_id', $category->id);
-            app(Slide::class)->insert($data);
-        }
+        // foreach (Category::all() as $category) {
+        //     data_set($data, '*.category_id', $category->id);
+        //     app(Slide::class)->insert($data);
+        // }
         if (App::environment('local')) {
             factory(Slide::class, 0)->create();
         }

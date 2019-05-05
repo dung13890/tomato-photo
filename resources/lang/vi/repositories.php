@@ -237,7 +237,7 @@ return [
     'page' => [
         'name' => 'Trang',
         'home' => 'Trang chủ',
-        'about' => 'About',
+        'about' => 'About Page',
         'blog' => 'Blog',
         'contact' => 'Contact',
         'resource' => [

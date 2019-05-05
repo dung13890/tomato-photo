@@ -127,6 +127,7 @@ class ConfigsSeeder extends Seeder
         app(Config::class)->create([
             'key' => 'home',
             'value' => [
+                'who_we_are_image' => 'seeds/home-about.jpg',
                 'who_we_are' => 'Based in Hanoi, tomato-photo provides a high quality and dedicated photo editing service platform with the main focus on real estate photo editing sector for cooperation and individual clients around the world. Beyond in 2017, we have never stopped to improve and develop our full service solution to our photographers in line with the highest industry standards and customer expectations. tomato-photo is equipped with a highly talented and enthusiastic team of photo editors who reached outstanding level in editing techniques to guarantee the best quality and turnaround time.',
                 'icons' => [
                     'twilight' => 'Upload your photos from your mobile, tablet or desktop computer.',

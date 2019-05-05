@@ -43,7 +43,7 @@
 
 <div class="form-group text-right">
     @if (isset($item))
-    <a href="{{ route('backend.category.collection', $item->id) }}" class="btn btn-info btn-sm"><i class="ion-images"></i> {{ __('repositories.title.collection') }}</a>
+    {{-- <a href="{{ route('backend.category.collection', $item->id) }}" class="btn btn-info btn-sm"><i class="ion-images"></i> {{ __('repositories.title.collection') }}</a> --}}
     @endif
     <button type="submit" class="btn btn-success btn-sm"><i class="ion-checkmark-circled"></i> {{ isset($item) ? __('repositories.title.edit') : __('repositories.title.create') }}</button>
 </div>

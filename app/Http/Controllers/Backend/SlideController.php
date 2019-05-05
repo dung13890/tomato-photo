@@ -29,6 +29,7 @@ class SlideController extends BackendController
         $this->compacts['categories'] = $this->repoCategory
             ->getDataByType(config('common.category.type.0'), $this->categorySelect)
             ->pluck('name', 'id')
+            ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
 
         if ($request->ajax() && $request->has('datatables')) {
@@ -45,6 +46,7 @@ class SlideController extends BackendController
         $this->compacts['categories'] = $this->repoCategory
             ->getDataByType(config('common.category.type.0'), $this->categorySelect)
             ->pluck('name', 'id')
+            ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
 
         return $this->viewRender();
@@ -65,6 +67,7 @@ class SlideController extends BackendController
         $this->compacts['categories'] = $this->repoCategory
             ->getDataByType(config('common.category.type.0'), $this->categorySelect)
             ->pluck('name', 'id')
+            ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
 
         return $this->viewRender();
