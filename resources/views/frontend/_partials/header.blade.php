@@ -38,7 +38,7 @@
         <div class="container">
             <div class="row">
                 <a class="site-logo col-6 col-sm-6 col-md-6 col-lg-2" href="/">
-                    <img class="logo" src="{{ asset('images/static/logo.png') }}" alt="Site brand">
+                    <img class="logo" src="{{ publicSrc($configs['logo'][0] ?? null) }}" alt="Site brand">
                 </a>
                 <div class="main-menu col-6 col-sm-6 col-md-6 col-lg-10">
                     <div id="offcanvas-toggler" class="d-lg-none d-xl-none">
