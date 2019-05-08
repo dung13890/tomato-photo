@@ -24,13 +24,13 @@
                 </div>
                 <div class="f-col col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <h3 class="f-title">Our Instagram</h3>
-                    <instagram-gallery username="chanelcartoon01" />
+                    <instagram-gallery username="{{ $configs['instagram_account'][0] ?? null}}" />
                 </div>
 
 
                 <div class="f-col facebook-box-wrapper col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="facebook-box">
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFotoEditingService%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="{{ $configs['iframe_fb'][0] ?? null }}" width="340" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                     </div>
                 </div>
             </div>

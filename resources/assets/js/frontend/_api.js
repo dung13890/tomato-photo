@@ -1,4 +1,4 @@
-export const getInstagram = async username => {
+export const getInstagram = async (username, limit = 6) => {
     try {
         if (username === undefined || username === null || typeof username !== 'string' || username.length < 0) {
             return {
@@ -7,27 +7,33 @@ export const getInstagram = async username => {
             }
         }
 
-        let url = null;
+        let endpoint = null;
         const input = username.toLowerCase().trim();
 
         switch ( input.substring(0, 1) ) {
             case '#':
-                url = 'https://instagram.com/explore/tags/' + input.replace('#', '');
+                endpoint = 'explore/tags/' + input.replace('#', '');
                 break;
 
             default:
-                url = 'https://instagram.com/' + input.replace('@', '');
+                endpoint = input.replace('@', '');
                 break;
         }
 
-        if (url === null) return {
+        if (endpoint === null) return {
             status: 0,
             error: 'api url not exits'
         };
 
         const response = await window.axios({
-            method: 'post',
-            url
+            method: 'get',
+            url: 'https://cors-anywhere.herokuapp.com/https://www.instagram.com/' + endpoint,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': '*',
+                'Access-Control-Allow-Methods': 'PUT, GET, POST, DELETE, OPTIONS'
+            },
+            withCredentials: false
         });
 
         let payload = [];
@@ -42,21 +48,21 @@ export const getInstagram = async username => {
             images = data['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
         }
 
-        images.forEach(image => {
+        for (let i = 0; i < images.length; i++) {
             let type = 'image';
             let caption = 'Instagram Image';
             let link = null;
 
-            if (image['node']['is_video']) {
+            if (images[i]['node']['is_video']) {
                 type = 'video';
             }
 
-            if (image['node']['edge_media_to_caption']['edges'].length && image['node']['edge_media_to_caption']['edges'][0]['node']['text']) {
-                caption = image['node']['edge_media_to_caption']['edges'][0]['node']['text'];
+            if (images[i]['node']['edge_media_to_caption']['edges'].length && images[i]['node']['edge_media_to_caption']['edges'][0]['node']['text']) {
+                caption = images[i]['node']['edge_media_to_caption']['edges'][0]['node']['text'];
             }
 
-            if (image['node']['shortcode']) {
-                link = '//instagram.com/p/' + image['node']['shortcode'];
+            if (images[i]['node']['shortcode']) {
+                link = '//instagram.com/p/' + images[i]['node']['shortcode'];
                 link.replace(/\/$/, '');
             }
 
@@ -64,15 +70,17 @@ export const getInstagram = async username => {
                 type,
                 caption,
                 link,
-                time: image['node']['taken_at_timestamp'],
-                comments: image['node']['edge_media_to_comment']['count'],
-                likes: image['node']['edge_liked_by']['count'],
-                thumbnail: image['node']['thumbnail_resources'][0]['src'].replace('/^https?\:/i', ''),
-                small: image['node']['thumbnail_resources'][2]['src'].replace('/^https?\:/i', ''),
-                large: image['node']['thumbnail_resources'][4]['src'].replace('/^https?\:/i', ''),
-                original: image['node']['display_url'].replace('/^https?\:/i', '')
+                time: images[i]['node']['taken_at_timestamp'],
+                comments: images[i]['node']['edge_media_to_comment']['count'],
+                likes: images[i]['node']['edge_liked_by']['count'],
+                thumbnail: images[i]['node']['thumbnail_resources'][0]['src'].replace('/^https?\:/i', ''),
+                small: images[i]['node']['thumbnail_resources'][2]['src'].replace('/^https?\:/i', ''),
+                large: images[i]['node']['thumbnail_resources'][4]['src'].replace('/^https?\:/i', ''),
+                original: images[i]['node']['display_url'].replace('/^https?\:/i', '')
             });
-         });
+
+            if (i > limit - 2) break;
+         }
 
         return {
             status: 1,

@@ -80,6 +80,8 @@ return [
         'phone' => 'Điện thoại',
         'skype' => 'Skype',
         'fax' => 'Fax',
+        'instagram_account' => 'Tài khoản Instagram',
+        'iframe_fb' => 'Facebook iframe source',
         'content' => 'Nội dung',
         'banner' => 'Ảnh banner',
         'username' => 'Tên đăng nhập',

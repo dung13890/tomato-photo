@@ -74,6 +74,16 @@ class ConfigsSeeder extends Seeder
         ]);
 
         app(Config::class)->create([
+            'key' => 'iframe_fb',
+            'value' => ['https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FFotoEditingService%2F&tabs&width=340&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId'],
+        ]);
+
+        app(Config::class)->create([
+            'key' => 'instagram_account',
+            'value' => ['@chanelcartoon01'],
+        ]);
+
+        app(Config::class)->create([
             'key' => 'map',
             'value' => ['https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.6790075671793!2d105.82015161425761!3d20.96540198603266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acfdc32041f3%3A0xfb0ba343c3f5d627!2zQ1QxLUExLCBC4bqxbmcgQSAyLCBLaHUgxJHDtCB0aOG7iyBUw6J5IE5hbSBMaW5oIMSQw6BtLCBIb8OgbmcgTGnhu4d0LCBIb8OgbmcgTWFpLCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1520319639447'],
         ]);
@@ -127,13 +137,39 @@ class ConfigsSeeder extends Seeder
         app(Config::class)->create([
             'key' => 'home',
             'value' => [
-                'who_we_are_image' => 'seeds/home-about.jpg',
+                'who_we_are_image' => 'seeds/about-us/about.jpg',
                 'who_we_are' => 'Based in Hanoi, tomato-photo provides a high quality and dedicated photo editing service platform with the main focus on real estate photo editing sector for cooperation and individual clients around the world. Beyond in 2017, we have never stopped to improve and develop our full service solution to our photographers in line with the highest industry standards and customer expectations. tomato-photo is equipped with a highly talented and enthusiastic team of photo editors who reached outstanding level in editing techniques to guarantee the best quality and turnaround time.',
-                'icons' => [
-                    'twilight' => 'Upload your photos from your mobile, tablet or desktop computer.',
-                    'remove_item' => 'Our team of professional editors will perform over 16 editing tasks on your images within 24 hours. 100% satisfaction guaranteed.',
-                    'day_to_dusk' => 'Each image is viewed & checked by our quality control team.',
-                    'image_enhancement' => 'Download the professionally edited images from your account as soon as they are complete.',
+                'how_to' => [
+                    0 => [
+                        'icon' => 'ion ion-ios-ribbon',
+                        'title' => 'Top Quality',
+                        'description' => 'Upload your photos from your mobile, tablet or desktop computer.',
+                    ],
+                    1 => [
+                        'icon' => 'ion ion-ios-planet',
+                        'title' => 'Excellent Communication',
+                        'description' => 'Our team of professional editors will perform over 16 editing tasks on your images within 24 hours.',
+                    ],
+                    2 => [
+                        'icon' => 'ion ion-ios-people',
+                        'title' => 'Professional Team',
+                        'description' => 'Each image is viewed & checked by our quality control team.',
+                    ],
+                    3 => [
+                        'icon' => 'ion ion-ios-globe',
+                        'title' => 'Worldwide services',
+                        'description' => 'Our clients are all around the the world.',
+                    ],
+                    4 => [
+                        'icon' => 'ion ion-ios-rocket',
+                        'title' => 'Fast Turnaround Time',
+                        'description' => 'Download the professionally edited images from your account as soon as they are complete.',
+                    ],
+                    5 => [
+                        'icon' => 'ion ion-ios-unlock',
+                        'title' => 'Security',
+                        'description' => 'Your privacy and copyright are our prioirty',
+                    ],
                 ],
                 'about_us' => "tomato-photo team located in Vietnam, serves you in a wide range of services including photo editing, floor plans, virtual staging and video listing as a best center for your promotional campaigns, expand your photography bussiness. Every job is processed with calibrated screens, top softwares, high connection internet, fast turnaround time, affordable price.\n\r \n\r Whether you are in real estate and need high-quality images to showcase a home or are presenting products to the retail market, tomato-photo will work with your images to get the best result for your needs. High quality photos are proven to increase sales and our editors will make your product or listing stand out from the competition.",
             ],

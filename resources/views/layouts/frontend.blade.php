@@ -17,9 +17,9 @@
 
         @include('frontend._partials.footer')
 
-        {{-- <a href="#site-body" id="back-top">
-            <i class="fa fa-long-arrow-up"></i>
-        </a> --}}
+        <a href="#site-body" id="back-top">
+            <i class="ion ion-md-arrow-round-up"></i>
+        </a>
 
         <a href="skype:{{ $configs['skype'][0] ?? null }}?chat" id="action-skype"><i class="ion ion-logo-skype"></i><span>Call for us</span></a>
 

@@ -476,6 +476,20 @@
     }
 }
 
+.howto-block {
+    .block-icon {
+        font-size: 40px;
+        width: 100px;
+        height: 100px;
+        color: #fff;
+        border: 8px inset #fff;
+        display: inline-block;
+        line-height: 84px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+    }
+}
+
 .library-gallery {
     ul {
         position: relative;
