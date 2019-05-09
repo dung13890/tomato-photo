@@ -16,6 +16,10 @@
           username: {
             type: String,
             default: ''
+          },
+          limit: {
+            type: Number,
+            default: () => 6
           }
         },
         data() {
@@ -28,7 +32,7 @@
         },
         methods: {
             async fetchData() {
-                const res = await getInstagram(this.username);
+                const res = await getInstagram(this.username, this.limit);
 
                 console.log('Res: ', res);
 

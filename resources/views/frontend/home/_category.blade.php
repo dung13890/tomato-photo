@@ -7,11 +7,11 @@
         <ul class="list-items row mt-5 wow zoomIn">
             @foreach ($categories as $category)
             <li class="item col-md-4 col-sm-6">
-                <div class="media row align-items-center">
-                    <a class="col-lg-12" href="{{ route('category.show', $category->slug) }}">
+                <div class="item-inner shadow-sm">
+                    <a class="d-block" href="{{ route('category.show', $category->slug) }}">
                         <img src="{{ publicSrc($category->image_src) }}" alt="{{ $category->name }}" />
                     </a>
-                    <div class="col-lg-12 media-body">
+                    <div class="item-content p-4">
                         <a href="{{ route('category.show', $category->slug) }}">
                             <h3>{{ $category->name }}</h3>
                         </a>
