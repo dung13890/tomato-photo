@@ -33,7 +33,6 @@ class ProductRepositoryEloquent extends AbstractRepositoryEloquent implements Pr
     {
         return $this->model
             ->where('locked', false)
-            // ->where('is_home', true)
             ->with(['category' => function ($q) {
                 $q->select(['id', 'slug']);
             }])

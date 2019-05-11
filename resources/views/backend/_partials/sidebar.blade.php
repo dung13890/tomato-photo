@@ -44,7 +44,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" target="_blank" href="{{ asset(config('common.documents.link')) }}"><i class="ion-document-text"></i> {{ __('repositories.title.document') }}</a>
+                <a class="nav-link" target="_blank" href="#"><i class="ion-document-text"></i> {{ __('repositories.title.document') }}</a>
             </li>
         </ul>
     </nav>
