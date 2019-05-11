@@ -21,7 +21,7 @@ class CategoryController extends FrontendController
     public function show($slug)
     {
         $categories = $this->repository->getDataByType('product');
-        if ($slug == 'services' && count($categories)) {
+        if ($slug === 'services' && count($categories)) {
             $slug = $categories[0]->slug;
         }
         $category = $this->repository->findBySlugOrFail($slug);
@@ -34,11 +34,11 @@ class CategoryController extends FrontendController
         $this->compacts['category'] = $category;
         $this->compacts['categories'] = $categories;
         $this->compacts['slides'] = $category->slides;
-        $this->compacts['services'] = $this->repoProduct->getHome(
+        $this->compacts['services'] = $this->repoProduct->getDataByCategory(
             config('common.product.limit'),
+            $category->id,
             ['id', 'name', 'image_before_src', 'image_before_title', 'image_after_src', 'image_after_title', 'description', 'category_id']
         );
-        // $this->compacts['collections'] = $category->collections;
 
         return $this->viewRender();
     }

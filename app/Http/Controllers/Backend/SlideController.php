@@ -27,7 +27,7 @@ class SlideController extends BackendController
     {
         parent::__index();
         $this->compacts['categories'] = $this->repoCategory
-            ->getDataByType(config('common.category.type.0'), $this->categorySelect)
+            ->getDataByType(config('common.category.type.1'), $this->categorySelect)
             ->pluck('name', 'id')
             ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
@@ -44,7 +44,7 @@ class SlideController extends BackendController
     {
         parent::__create();
         $this->compacts['categories'] = $this->repoCategory
-            ->getDataByType(config('common.category.type.0'), $this->categorySelect)
+            ->getDataByType(config('common.category.type.1'), $this->categorySelect)
             ->pluck('name', 'id')
             ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
@@ -65,7 +65,7 @@ class SlideController extends BackendController
     {
         parent::__edit($item);
         $this->compacts['categories'] = $this->repoCategory
-            ->getDataByType(config('common.category.type.0'), $this->categorySelect)
+            ->getDataByType(config('common.category.type.1'), $this->categorySelect)
             ->pluck('name', 'id')
             ->prepend(__('repositories.page.about'), -1)
             ->prepend(__('repositories.label.is_home'), 0);
