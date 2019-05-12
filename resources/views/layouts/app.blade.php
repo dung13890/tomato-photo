@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>We-Edit Site</title>
+    <title>Realty-edits Site</title>
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/backend/app.css') }}" rel="stylesheet">

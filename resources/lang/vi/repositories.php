@@ -52,7 +52,7 @@ return [
     'text' => [
         'sign_in_to_acc' => 'Đăng nhập với tài khoản của bạn.!',
         'slide_page' => 'Slide landing page',
-        'sign_in_to_addr' => 'Email: Info@tomato.com.vn',
+        'sign_in_to_addr' => 'Email: Info@realty-edits.com',
         'sign_in_to_phon' => 'Phone: (+84) 97 6243 323',
         'show_in_category' => 'Nhóm bài viết hiển thị',
         'introduce_company' => 'Giới thiệu công ty',
@@ -293,7 +293,7 @@ return [
     ],
 
     'email' => [
-        'subject' => '[Tomato-photo] - Thông báo có một liên hệ mới.!',
+        'subject' => '[Realty-edits] - Thông báo có một liên hệ mới.!',
     ],
 
     'frontend' => [

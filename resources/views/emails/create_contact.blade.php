@@ -2,7 +2,7 @@
 
 @section('main')
     <div>
-        [We-edit] - Thông tin người dùng liên hệ<br>
+        [Realty-edits] - Thông tin người dùng liên hệ<br>
         <br>
         <br>
         <br>
@@ -19,7 +19,7 @@
         <br>
         <br>
         <br>
-        info@we-edit.com.vn<br>
+        info@realty-edit.scom<br>
          (+84) 97 6243 323<br>
         CT1 A1 Building, Hoang Liet Str., Hoang Mai Dis., Hanoi, Vietnam, 100000<br>
     </div>
