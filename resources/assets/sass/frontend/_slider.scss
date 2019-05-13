@@ -156,6 +156,32 @@
         }
     }
 
+    .bnt-slide {
+        color: #fff;
+        background: #76b51b;
+        padding: 0 15px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        border-radius: 3px;
+        margin-top: 30px;
+        transition: all 0.5s;
+        box-shadow: 0 0 30px 20px rgba(0, 0, 0, 0.05);
+
+        i {
+            margin-left: 7px;
+            transition: all 0.5s;
+        }
+
+        &:hover {
+            background: darken(#76b51b, 10%);
+
+            i {
+                margin-left: 10px;
+            }
+        }
+    }
+
     .slide-item-text {
         color: #fff;
         position: absolute;
@@ -234,19 +260,59 @@
         .animate_left_to_right {
             -webkit-animation: animate_left_to_right;
             animation: animate_left_to_right;
-            -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-            -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
         }
 
         .animate_right_to_left {
             -webkit-animation: animate_right_to_left;
             animation: animate_right_to_left;
+        }
+
+        .animate_left_to_right,
+        .animate_right_to_left {
             -webkit-animation-duration: 1s;
             animation-duration: 1s;
             -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
+
+            &.animate_duration_2 {
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+            }
+
+            &.animate_duration_3 {
+                -webkit-animation-duration: 3s;
+                animation-duration: 3s;
+            }
+
+            &.animate_duration_4 {
+                -webkit-animation-duration: 4s;
+                animation-duration: 4s;
+            }
+
+            &.animate_duration_5 {
+                -webkit-animation-duration: 5s;
+                animation-duration: 5s;
+            }
+
+            &.animate_duration_6 {
+                -webkit-animation-duration: 6s;
+                animation-duration: 6s;
+            }
+
+            &.animate_duration_7 {
+                -webkit-animation-duration: 7s;
+                animation-duration: 7s;
+            }
+
+            &.animate_duration_8 {
+                -webkit-animation-duration: 8s;
+                animation-duration: 8s;
+            }
+
+            &.animate_duration_9 {
+                -webkit-animation-duration: 9s;
+                animation-duration: 9s;
+            }
         }
     }
 
