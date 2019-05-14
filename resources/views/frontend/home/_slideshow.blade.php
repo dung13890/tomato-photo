@@ -11,8 +11,9 @@
                             </div>
                             <div class="slide-item-text container crazy-style-1">
                                 <div class="slide-item-text__inner">
-                                    <h1 class="animate_left_to_right">{{ $slide->title }}</h1>
-                                    <p class="animate_left_to_right">{{ $slide->description }}</p>
+                                    <h1 class="animate_left_to_right animate_duration_1">{{ $slide->title }}</h1>
+                                    <p class="animate_left_to_right animate_duration_3">{{ $slide->description }}</p>
+                                    <a href="{{ route('about') }}" class="bnt-slide animate_left_to_right animate_duration_5">Go to about us<i class="ion ion-md-arrow-forward"></i></a>
                                 </div>
                             </div>
                         </div>
