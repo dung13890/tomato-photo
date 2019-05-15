@@ -29,7 +29,10 @@
                     <h4>Contact us</h4>
                 </div>
                 <div class="contact-box__form">
-                    <form action="/">
+                    {{ Form::open([
+                        'url' => route('home.store.contact'),
+                        'autocomplete' => 'off',
+                    ]) }}
                         <div class="form-group">
                             <input type="text" title="Name" value="" class="form-control" maxlength="40" placeholder="* Name">
                         </div>
@@ -41,7 +44,7 @@
                         </div>
 
                         <button class="btn">Send us</button>
-                    </form>
+                    {{ Form::close() }}
                 </div>
             </div>
             <a href="#" class="contact-box__button">

@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Site name')
+@section('title', 'Realty-edits')
 
 @section('content')
     <main class="site-main">
