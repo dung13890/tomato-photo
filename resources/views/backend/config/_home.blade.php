@@ -42,7 +42,7 @@
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Description', ['class'=>'control-label']) }}
-                                {{ Form::textarea('home[how_to][0][description]', $items->keyBy('key')['home']['value'][0]['how_to']['description'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
+                                {{ Form::textarea('home[how_to][0][description]', $items->keyBy('key')['home']['value']['how_to'][0]['description'] ?? null, ['class' => 'form-control', 'rows' => 3]) }}
                             </div>
                         </div>
                     </div>

@@ -106,24 +106,9 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                     a = e.attr("data-negative-height");
                 var slide = e.find(".swiper-container");
 
-                if ("slider" == e.attr("id")) {
-                    var i = $("#slider").offset().top;
-                    if (w_height -= i, e.find(".slider-parallax-inner").length > 0) {
-                        var s = e.find(".slider-parallax-inner").css("transform").match(/-?[\d\.]+/g);
-                        if (s) o = s[5];
-                        else var o = 0;
-                        w_height = (window.innerHeight ? window.innerHeight : $window.height()) + Number(o) - i
-                    }
-                    // if ($("#slider.with-header").next("#header:not(.transparent-header)").length > 0 && ($body.hasClass("device-xl") || $body.hasClass("device-lg"))) t -= $header.outerHeight()
-                }
-
-                if ( e.parents(".full-screen").length > 0 && (w_height = e.parents(".full-screen").height())) {
-                    e.find(".swiper-slide").css("height", w_height);
-                }
-
                 var mySwiper = new Swiper (slide, {
                     // Optional parameters
-                    direction: 'vertical',
+                    // direction: 'vertical',
                     loop: true,
                     autoHeight: true,
 
