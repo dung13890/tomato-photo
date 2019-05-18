@@ -89,9 +89,10 @@ return [
         'category_ids' => 'Nhóm sản phẩm',
         'image_before_src' => 'Hình ảnh trước',
         'image_after_src' => 'Hình ảnh sau',
-        'first_name' => 'First Name',
+        'first_name' => 'Name',
         'last_name' => 'Last Name',
-        'company' => 'Company',
+        'contact_message' => 'Message',
+        'company' => 'Company / Position',
         'message' => 'Thông điệp',
         'name' => 'Tên',
         'email' => 'Email',
@@ -101,6 +102,7 @@ return [
         'description' => 'Mô tả',
         'locked' => 'Khoá',
         'is_home' => 'Hiện trang chủ',
+        'is_team' => 'Hiện trang about',
         'is_comment' => 'Cho bình luận',
         'advantage' => 'Ưu điểm',
         'coordination' => 'Hình thức lắp đặt',
@@ -203,11 +205,11 @@ return [
     ],
 
     'home' => [
-        'name' => 'Đánh giá',
+        'name' => 'Đánh giá & Team',
         'resource' => [
-            'index' => 'Thông tin liên hệ',
-            'create' => 'Tạo mới liên hệ',
-            'edit' => 'Cập nhật liên hệ',
+            'index' => 'Thông tin thông tin',
+            'create' => 'Tạo mới thông tin',
+            'edit' => 'Cập nhật thông tin',
         ],
     ],
 

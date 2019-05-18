@@ -13,6 +13,7 @@ class Contact extends Model
         'company',
         'message',
         'is_home',
+        'is_team',
         'avatar',
     ];
 

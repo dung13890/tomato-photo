@@ -41,6 +41,7 @@
                                     <th>{{ __('repositories.label.company') }}</th>
                                     <th>{{ __('repositories.label.message') }}</th>
                                     <th>{{ __('repositories.label.is_home') }}</th>
+                                    <th>{{ __('repositories.label.is_team') }}</th>
                                     <th>{{ __('repositories.label.action') }}</th>
                                 </tr>
                             </thead>

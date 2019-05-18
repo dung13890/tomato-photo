@@ -31,6 +31,7 @@ class StoreJob extends Job
     {
         $data = array_only($this->params, $repository->model->getFillable());
         $data['is_home'] = $data['is_home'] ?? false;
+        $data['is_team'] = $data['is_team'] ?? false;
         if (array_has($this->params, 'image')) {
             $image = $this->uploadFile($this->params['image']);
             $data['avatar'] = $image->src;

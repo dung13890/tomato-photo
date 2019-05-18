@@ -23,6 +23,12 @@ class Home {
           return row.is_home == 1 ? '<span class="label label-primary">ON</span>' : '';
         }
       },
+      { data: 'is_team',
+        name: 'is_team',
+        render:function (data, type, row) {
+          return row.is_team == 1 ? '<span class="label label-primary">ON</span>' : '';
+        }
+      },
     ];
     let searches = {
       data: function (d) {

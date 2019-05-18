@@ -7,6 +7,7 @@ public/img/
 /public/storage
 /public/assets
 /public/frontend
+/public/mix-manifest.json
 /storage/*.key
 /resources/assets/bower
 /vendor

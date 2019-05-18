@@ -14,10 +14,16 @@
 Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about', function () {
-        return view('frontend.page.about');
+        $compact['__about_slides'] = app(\App\Contracts\Repositories\SlideRepository::class)
+            ->getDataByCategory(config('common.about.limit'), -1);
+        $compact['__about_teams'] = app(\App\Contracts\Repositories\ContactRepository::class)->getTeams(
+                config('common.contact.limit'),
+                ['first_name', 'company', 'avatar', 'message']
+            );
+        return view('frontend.page.about', $compact);
     })->name('about');
     Route::get('/contact', function () {
-        return view('frontend.page.contact');
+        return view('frontend.page.contact', ['disableIconContact' => true]);
     })->name('contact');
     Route::post('home/contact', 'HomeController@storeContact')->name('home.store.contact');
 

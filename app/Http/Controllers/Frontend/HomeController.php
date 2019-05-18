@@ -50,7 +50,6 @@ class HomeController extends FrontendController
     public function storeContact(ContactRequest $request)
     {
         $data = $request->all();
-
         try {
             $message = __("repositories.frontend.contact_form.successfully");
             $this->dispatchNow(new UserStoreJob($data));

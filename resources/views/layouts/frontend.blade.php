@@ -23,7 +23,8 @@
 
         <a href="skype:{{ $configs['skype'][0] ?? null }}?chat" id="action-skype"><i class="ion ion-logo-skype"></i><span>Call for us</span></a>
 
-        <div id="contact-box" class="contact-box">
+        @if (empty($disableIconContact))
+        <div id="contact-box" class="contact-box @if ($errors->any()) open @endif">
             <div class="contact-box__content">
                 <div class="contact-box__header">
                     <h4>Contact us</h4>
@@ -34,13 +35,22 @@
                         'autocomplete' => 'off',
                     ]) }}
                         <div class="form-group">
-                            <input type="text" title="Name" value="" class="form-control" maxlength="40" placeholder="* Name">
+                            {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => '(*) ' . __('repositories.label.first_name') ]) }}
+                            @if ($errors->has('name'))
+                                <small class="form-text text-danger">{{ $errors->first('name') }}</small>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <input type="email" title="Email" value="" class="form-control" maxlength="150" placeholder="* Email">
+                            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => '(*) ' . __('repositories.label.email') ]) }}
+                            @if ($errors->has('email'))
+                                <small class="form-text text-danger">{{ $errors->first('email') }}</small>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <textarea title="Message" maxlength="500" placeholder="* Message"></textarea>
+                            {{ Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => '(*) Message...']) }}
+                            @if ($errors->has('message'))
+                                <small class="form-text text-danger">{{ $errors->first('message') }}</small>
+                            @endif
                         </div>
 
                         <button class="btn">Send us</button>
@@ -52,6 +62,7 @@
                 <i class="contact-box__button--close ion ion-ios-close"></i>
             </a>
         </div>
+        @endif
      </div>
 
     <!-- Scripts -->

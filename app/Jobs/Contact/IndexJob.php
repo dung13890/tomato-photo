@@ -26,6 +26,7 @@ class IndexJob extends Job
         'company',
         'message',
         'is_home',
+        'is_team',
     ];
 
     public function __construct(array $params)

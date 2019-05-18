@@ -27,4 +27,13 @@ class ContactRepositoryEloquent extends AbstractRepositoryEloquent implements Co
             ->take($limit)
             ->get($columns);
     }
+
+    public function getTeams($limit, $columns = ['*'])
+    {
+        return $this->model
+            ->where('is_team', true)
+            ->orderByDesc('updated_at')
+            ->take($limit)
+            ->get($columns);
+    }
 }
