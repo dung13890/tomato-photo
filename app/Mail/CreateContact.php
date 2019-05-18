@@ -30,7 +30,7 @@ class CreateContact extends Mailable
      */
     public function build()
     {
-        return $this->to(config('common.email.we-edit'))
+        return $this->to(config('common.email.realty-edits'))
             ->subject(__('repositories.email.subject'))
             ->view('emails.create_contact')
             ->with($this->params);

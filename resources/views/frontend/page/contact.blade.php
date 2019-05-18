@@ -25,7 +25,7 @@
             </div>
         </section>
 
-        <section class="section-wrapper contact-map-wrapper" id="we-wrapper">
+        <section class="section-wrapper contact-map-wrapper" id="re-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="contact-form-block col-lg-6">
@@ -37,46 +37,35 @@
                             <div class="alert alert-success">{{ Session::get('contact_flash_message') }}</div>
                         @endif
                         {{ Form::open([
-                            'url' => '#we-wrapper',
+                            'url' => route('home.store.contact') . '#re-wrapper',
                             'role'  => 'form',
                             'autocomplete'=>'off',
                             'class' => 'form contact-form',
                         ]) }}
                             <div class="form-group row">
                                 <div class="col-md-6">
-                                    {{ Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.first_name') . ' (*)']) }}
-                                    @if ($errors->has('first_name'))
-                                        <small class="form-text invalid-feedback">{{ $errors->first('first_name') }}</small>
+                                    {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => '(*) ' . __('repositories.label.first_name') ]) }}
+                                    @if ($errors->has('name'))
+                                        <small class="form-text text-danger">{{ $errors->first('name') }}</small>
                                     @endif
                                 </div>
                                 <div class="col-md-6">
-                                    {{ Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.last_name') . ' (*)']) }}
-                                    @if ($errors->has('last_name'))
-                                        <small class="form-text invalid-feedback">{{ $errors->first('last_name') }}</small>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-6">
-                                    {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.company') . ' (*)']) }}
-                                    @if ($errors->has('company'))
-                                        <small class="form-text invalid-feedback">{{ $errors->first('company') }}</small>
-                                    @endif
-                                </div>
-                                <div class="col-md-6">
-                                    {{ Form::text('email', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.email') . ' (*)']) }}
+                                    {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => '(*) ' . __('repositories.label.email') ]) }}
                                     @if ($errors->has('email'))
-                                        <small class="form-text invalid-feedback">{{ $errors->first('email') }}</small>
+                                        <small class="form-text text-danger">{{ $errors->first('email') }}</small>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                {{ Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => 'Message...']) }}
+                                {{ Form::textarea('message', null, ['class' => 'form-control', 'rows' => 3, 'placeholder' => '(*) Message...']) }}
+                                @if ($errors->has('message'))
+                                    <small class="form-text text-danger">{{ $errors->first('message') }}</small>
+                                @endif
                             </div>
 
                             <button type="submit" class="btn btn-theme">Send Us</button>
-                        </form>
+                        {{ Form::close() }}
                     </div>
                 </div>
             </div>

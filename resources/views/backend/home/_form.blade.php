@@ -28,6 +28,14 @@
                     {{ Form::label('email', __('repositories.label.email'), ['class'=>'control-label']) }}
                     {{ Form::email('email', null, ['placeholder' => 'example@email.com', 'class' => 'form-control']) }}
                 </div>
+                <div class="col-sm-4">
+                    <label></label>
+                    <div class="checkbox">
+                        <label>
+                            {{ Form::checkbox('is_team', true, old('is_team'), ['data-toggle'=>'toggle', 'data-size' => 'small']) }} <b>{{ __('repositories.label.is_team') }}</b>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group">

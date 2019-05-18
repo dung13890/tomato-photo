@@ -14,9 +14,9 @@ class ContactRequest extends Request
     public function rules()
     {
         return [
-            'first_name' => 'required|min:2|max:175',
-            'last_name' => 'required|min:2|max:175',
-            'email' => 'required|email|max:255|unique:contacts',
+            'name' => 'required|min:2|max:175',
+            'email' => 'required|email|max:255',
+            'message' => 'required',
         ];
     }
 
@@ -34,10 +34,9 @@ class ContactRequest extends Request
     public function attributes()
     {
         return [
-            'first_name' => __('repositories.label.first_name'),
-            'last_name' => __('repositories.label.last_name'),
-            'company' => __('repositories.label.company'),
+            'name' => __('repositories.label.first_name'),
             'email' => __('repositories.label.email'),
+            'message' => __('repositories.label.contact_message'),
         ];
     }
 }

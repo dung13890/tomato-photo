@@ -51,46 +51,22 @@
                             <h2 class="heading">MEET OUR TEAM</h2>
                         </div>
                         <ul class="list-unstyled">
+                            @foreach ($__about_teams as $team)
                             <li class="media align-items-center">
-                                <img src="images/static/members/member-01.jpg" class="align-self-center mr-3" alt="member 01">
+                                <img src="{{ publicSrc($team->avatar) }}" class="align-self-center mr-3" alt="{{ $team->first_name }}">
                                 <div class="media-body">
                                     <div class="row align-items-center">
                                         <div class="col-5">
-                                            <span class="color-primary">CEO</span>
-                                            <h5 class="mt-0 mb-1">Mr. Peter</h5>
+                                            <span class="color-primary">{{ $team->company }}</span>
+                                            <h5 class="mt-0 mb-1">{{ $team->first_name }}<</h5>
                                         </div>
                                         <div class="col-7">
-                                            <p>2011年6月: ハノイ工科大学卒業</p>
-                                            <p>2011年8月: Luvina Software JSC社入社</p>
-                                            <p>2014年9月: 当社設立、代表取締役就任</p>
+                                            <p> {!! $team->message !!} </p>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li class="media align-items-center">
-                                <img src="images/static/members/member-02.jpg" class="align-self-center mr-3" alt="member 02">
-                                <div class="media-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <span class="color-primary">Designer</span>
-                                            <h5 class="mt-0 mb-1">Ms. Lucky</h5>
-                                        </div>
-                                        <div class="col-7">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="media align-items-center">
-                                <img src="images/static/members/member-03.jpg" class="align-self-center mr-3" alt="member 03">
-                                <div class="media-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <span class="color-primary">Development</span>
-                                            <h5 class="mt-0 mb-1">Mr. Kevin</h5>
-                                        </div>
-                                        <div class="col-7">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</div>
-                                    </div>
-                                </div>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -26,9 +26,9 @@ return [
         'photo_setid' => '72157674021237807',
     ],
     'documents' => [
-        'link' => 'we-edit_documents.pdf',
+        'link' => 'realty-edits_documents.pdf',
     ],
     'email' => [
-        'we-edit' => 'info@we-edit.com.vn',
+        'realty-edits' => env('EMAIL_INFO', 'dung13890@gmail.com'),
     ],
 ];
