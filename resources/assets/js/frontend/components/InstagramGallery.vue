@@ -34,7 +34,7 @@
             async fetchData() {
                 const res = await getInstagram(this.username, this.limit);
 
-                console.log('Res: ', res);
+                // console.log('Res: ', res);
 
                 if (res.status) {
                     this.items = res.payload;
