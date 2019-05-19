@@ -35,6 +35,7 @@
                     {{ Form::model($item, [
                         'method' => 'PATCH',
                         'url' => route('backend.category.update', $item->id),
+                        'files' => true,
                         'autocomplete'=>'off',
                     ]) }}
                     @else

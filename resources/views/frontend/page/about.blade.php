@@ -58,7 +58,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-5">
                                             <span class="color-primary">{{ $team->company }}</span>
-                                            <h5 class="mt-0 mb-1">{{ $team->first_name }}<</h5>
+                                            <h5 class="mt-0 mb-1">{{ $team->first_name }}</h5>
                                         </div>
                                         <div class="col-7">
                                             <p> {!! $team->message !!} </p>

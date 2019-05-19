@@ -159,6 +159,24 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                     loopedSlides: 5, //looped slides should be the same
                     watchSlidesVisibility: true,
                     watchSlidesProgress: true,
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                        },
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                        },
+                        320: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                        }
+                    }
                 });
 
                 var galleryMain = new Swiper($galleryMain, {
