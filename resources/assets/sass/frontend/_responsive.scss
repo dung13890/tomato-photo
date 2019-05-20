@@ -144,13 +144,9 @@
         }
     }
 
-    .flexslider,
-    .swiper-container {
-        .slide-item-text {
-            h1,
-            h2 {
-                font-size: 40px;
-            }
+    .swiper-gallery {
+        .gallery-top {
+            height: 300px;
         }
     }
 
@@ -230,6 +226,29 @@
 
     .single-gallery-items {
         width: 20%;
+    }
+
+    .flexslider,
+    .swiper-container {
+        .slide-item-text {
+            p {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .tabs-block {
+        .tab-list {
+            li {
+                width: 100%;
+
+                a {
+                    width: 100%;
+                }
+            }
+        }
     }
 }
 

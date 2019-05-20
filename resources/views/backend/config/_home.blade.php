@@ -153,10 +153,6 @@
             </div>
         </div>
         <div class="form-group">
-            {{ Form::label('home', 'ABOUT US', ['class'=>'control-label']) }}
-            {{ Form::textarea('home[about_us]', $items->keyBy('key')['home']['value']['about_us'] ?? null, ['class' => 'form-control', 'rows' => 10]) }}
-        </div>
-        <div class="form-group">
             <div class="row">
                 <div class="col-md-6">
                     {{ Form::label('email', __('repositories.label.email'), ['class'=>'control-label']) }}
