@@ -33,7 +33,7 @@
 
     .introduction-wrapper {
         img {
-            margin-top: 30px;
+            margin-bottom: 30px;
         }
     }
 
@@ -136,6 +136,10 @@
             padding-bottom: 10px;
             text-align: center;
 
+            .slide-item-text__inner {
+                margin: auto;
+            }
+
             h1,
             h2 {
                 font-size: 20px;
@@ -214,6 +218,16 @@
 }
 
 @media (max-width: 576px) {
+    .section-wrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .py-5 {
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+        }
+    }
+
     .testimonial-item {
         .testimonial-image {
             margin-bottom: 15px;
