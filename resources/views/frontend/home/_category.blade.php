@@ -15,7 +15,7 @@
                         <a href="{{ route('category.show', $category->slug) }}">
                             <h3>{{ $category->name }}</h3>
                         </a>
-                        <p>{{ str_limit($category->description, 150) }}</p>
+                        <p>{!! str_limit($category->description, 150) !!}</p>
                     </div>
                 </div>
             </li>
