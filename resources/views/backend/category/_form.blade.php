@@ -28,8 +28,7 @@
 
 <div class="form-group">
     {{ Form::label('description', __('repositories.label.description'), ['class' => 'control-label']) }}
-    <div class="grid-editor"></div>
-    {{ Form::textarea('description', null, ['class' => 'form-control textarea-summernote']) }}
+    {{ Form::textarea('description', null, ['class' => 'form-control']) }}
 </div>
 
 <div class="form-group">
