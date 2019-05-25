@@ -15,7 +15,7 @@
         <br>
         <br>
         info@realty-edits.com<br>
-         (+84) 36 681 1991‬<br>
-        CT1 A1 Building, Hoang Liet Str., Hoang Mai Dis., Hanoi, Vietnam, 100000<br>
+        (+84) 36 681 1991‬<br>
+        Lô CC6 - Khu đô thị Linh Đàm, Hoàng Liệt, Hoàng Mai, Hà Nội, 100000<br>
     </div>
 @stop
