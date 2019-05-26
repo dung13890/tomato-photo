@@ -26,7 +26,7 @@
                                 <div class="swiper-slide" style="background-image:url({{ publicSrc($service->image_after_src) }})">
                                     <div class="slide-control"></div>
                                     <div class="slide-before">
-                                        <img src="{{ publicSrc($service->image_before_src) }}" data-src="{{ publicSrc($service->image_before_src) }}" alt="">
+                                        <img src="{{ publicSrc($service->image_before_src) }}" data-src="{{ publicSrc($service->image_before_src) }}" alt="{{ $service->image_before_title }}">
                                         <span class="before-text"><span>Before</span></span>
                                     </div>
                                     <span class="after-text"><span>After</span></span>
