@@ -45,23 +45,23 @@
                             </div>
                         </div>
                     </div>
-
-                    <h2 class="service-heading">Our Service Videos</h2>
+                    @if (!empty($category->link_youtube))
+                    <h2 class="service-heading text-center">Our Service Videos</h2>
 
                     <div class="swiper-video-gallery">
                         <div class="video-gallery-top clearfix">
                             <div class="video-gallery-top__container">
-                                <iframe id="vid_frame" src="https://www.youtube.com/embed/{{ $videos[0]->embed }}?rel=0&showinfo=0&autohide=1&autoplay=0" frameborder="0" width="560" height="315" allow="autoplay" allowfullscreen></iframe>
+                                <iframe id="vid_frame" src="https://www.youtube.com/embed/{{ get_id_form_link_youtube($category->link_youtube[0]) }}?rel=0&showinfo=0&autohide=1&autoplay=0" frameborder="0" width="560" height="315" allow="autoplay" allowfullscreen></iframe>
                             </div>
                         </div>
 
-                        <div class="swiper-container video-gallery-thumbs" data-count="{{ count($videos) }}">
+                        <div class="swiper-container video-gallery-thumbs" data-count="{{ count($category->link_youtube) }}">
                             <div class="swiper-wrapper">
-                                @foreach ($videos as $video)
+                                @foreach ($category->link_youtube as $video)
                                 <div class="swiper-slide">
-                                    <a href="javascript:void(0);" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/{{ $video->embed }}?autoplay=1&rel=0&showinfo=0&autohide=1'">
+                                    <a href="javascript:void(0);" onClick="document.getElementById('vid_frame').src='https://youtube.com/embed/{{ get_id_form_link_youtube($video) }}?autoplay=1&rel=0&showinfo=0&autohide=1'">
                                         <span class="vid-thumb">
-                                            <img src="https://img.youtube.com/vi/{{ $video->embed }}/mqdefault.jpg" />
+                                            <img src="https://img.youtube.com/vi/{{ get_id_form_link_youtube($video) }}/mqdefault.jpg" />
                                         </span>
                                     </a>
                                 </div>
@@ -72,6 +72,7 @@
                             <div class="swiper-button-prev swiper-button-white"><i class="ion ion-ios-arrow-dropleft"></i></div>
                         </div>
                     </div><!-- end video gallery -->
+                    @endif
                 </div>
             </div>
         </div>

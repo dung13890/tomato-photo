@@ -24,3 +24,21 @@ if (!function_exists('isActiveRoute')) {
         }
     }
 }
+
+if (!function_exists('get_id_form_link_youtube')) {
+    function get_id_form_link_youtube($url)
+    {
+        /**
+        * Pattern matches
+        * https://gist.github.com/leogopal/b429f9700d473a55f70819dc6e5195f0
+        */
+        $pattern = "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/";
+
+        // Checks if it matches a pattern and returns the value
+        if (preg_match($pattern, $url, $match)) {
+            return $match[1] ?? null;
+        }
+
+        return null;
+    }
+}

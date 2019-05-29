@@ -40,27 +40,6 @@ class CategoryController extends FrontendController
             ['id', 'name', 'image_before_src', 'image_before_title', 'image_after_src', 'image_after_title', 'description', 'category_id']
         );
 
-        $this->compacts['videos'] = collect([
-            (object) [
-                'embed' => 'z8uG5av8MUg', // get from url: https://www.youtube.com/watch?v=z8uG5av8MUg
-            ],
-            (object) [
-                'embed' => 'Nt3zG5ccSak',
-            ],
-            (object) [
-                'embed' => 'e-5RVTrrrYg',
-            ],
-            (object) [
-                'embed' => 'ALBgq5MAuRM',
-            ],
-            (object) [
-                'embed' => 'gpzjvW6nJu8',
-            ],
-            (object) [
-                'embed' => '-xbQkDtgq-k',
-            ],
-        ]);
-
         return $this->viewRender();
     }
 }

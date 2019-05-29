@@ -22,6 +22,17 @@ class Category {
     notification.flashMessage();
     var uploadfile = new Uploadfile();
     uploadfile.init();
+    this.addYoutube();
+  }
+
+  addYoutube () {
+    var _$ = window.$;
+    _$('#link-youtube a').click(() => {
+        _$('#link-youtube').append(`
+            <br>
+            <input class="form-control" placeholder="${window.lang.get('repositories.label.link_youtube')}" name="link_youtube[]" type="text">
+        `);
+    });
   }
 
   sortImages () {
