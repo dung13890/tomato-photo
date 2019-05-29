@@ -31,6 +31,32 @@
     {{ Form::textarea('description', null, ['class' => 'form-control']) }}
 </div>
 
+<div class="form-group" id="link-youtube">
+    {{ Form::label('link_youtube', __('repositories.label.link_youtube'), [ 'class' => 'control-label' ]) }}
+    @if (!empty($item) && !empty($item->link_youtube))
+        @foreach ($item->link_youtube as $linkYoutube)
+            @if ($loop->first)
+                <div class="input-group">
+                    {{ Form::text('link_youtube[]', $linkYoutube, ['class' => 'form-control', 'placeholder' => __('repositories.label.link_youtube')]) }}
+                    <span class="input-group-btn">
+                        <a class="btn btn-default" href="javascript:void(0)"><i class="ion-ios-plus-outline"></i></a>
+                    </span>
+                </div>
+            @else
+            <br />
+            {{ Form::text('link_youtube[]', $linkYoutube, ['class' => 'form-control', 'placeholder' => __('repositories.label.link_youtube')]) }}
+            @endif
+        @endforeach
+    @else
+    <div class="input-group">
+        {{ Form::text('link_youtube[]', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.link_youtube')]) }}
+        <span class="input-group-btn">
+            <a class="btn btn-default" href="javascript:void(0)"><i class="ion-ios-plus-outline"></i></a>
+        </span>
+    </div>
+    @endif
+</div>
+
 <div class="form-group">
     <label></label>
     <div class="checkbox">

@@ -74,6 +74,7 @@ return [
         'ceo_description' => 'Mô tả SEO',
         'icon' => 'Icon menu (200x200)',
         'title' => 'Tiêu đề',
+        'link_youtube' => 'Link Youtube',
         'root' => 'Nguồn',
         'image' => 'Hình ảnh',
         'images' => 'Nhiều hình ảnh',

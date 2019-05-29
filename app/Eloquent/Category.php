@@ -9,6 +9,10 @@ class Category extends Model
 {
     use ModelableTrait;
 
+    protected $casts = [
+        'link_youtube' => 'array',
+    ];
+
     protected $fillable = [
         'name',
         'image_src',
@@ -17,6 +21,7 @@ class Category extends Model
         'ceo_keywords',
         'type',
         'description',
+        'link_youtube',
         'collection_title',
         'collection_intro',
         'locked',
