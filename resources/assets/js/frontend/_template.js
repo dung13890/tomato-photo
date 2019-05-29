@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import WOW from 'wow.js';
 import 'lightgallery/dist/js/lightgallery-all.min.js';
+import './_fitvids.js';
 
 (function ($) {
     window.AppBrand = window.AppBrand || {};
@@ -151,33 +152,43 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                 var $galleryThumbs = $(this).find('.gallery-thumbs');
                 var $galleryMain = $(this).find('.gallery-top');
 
+                var thumbsCount = $galleryThumbs.data('count') || 0;
                 var galleryThumbs = new Swiper($galleryThumbs, {
                     spaceBetween: 10,
                     slidesPerView: 5,
                     loop: true,
                     freeMode: true,
-                    loopedSlides: 5, //looped slides should be the same
+                    loop: thumbsCount > 4 ? true : false,
                     watchSlidesVisibility: true,
                     watchSlidesProgress: true,
                     breakpoints: {
                         1024: {
                             slidesPerView: 5,
                             spaceBetween: 10,
+                            loop: thumbsCount > 4 ? true : false,
                         },
                         768: {
                             slidesPerView: 4,
                             spaceBetween: 10,
+                            loop: thumbsCount > 3 ? true : false,
                         },
                         640: {
                             slidesPerView: 3,
                             spaceBetween: 10,
+                            loop: thumbsCount > 2 ? true : false,
                         },
                         320: {
                             slidesPerView: 2,
                             spaceBetween: 10,
+                            loop: thumbsCount > 1 ? true : false,
                         }
                     }
                 });
+
+                var mainWidth = $galleryMain.outerWidth();
+                var mainHeight = 2 * mainWidth / 3;
+
+                $galleryMain.css('height',  mainHeight + 'px');
 
                 var galleryMain = new Swiper($galleryMain, {
                     spaceBetween: 10,
@@ -191,6 +202,16 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
                         swiper: galleryThumbs,
                     },
                 });
+
+                $(window).resize(function(){
+                    var mainWidth2 = $galleryMain.outerWidth();
+                    var mainHeight2 = 2 * mainWidth2 / 3;
+
+                    $galleryMain.css('height',  mainHeight2 + 'px');
+                    galleryMain.update();
+                })
+
+                $(window).trigger('resize')
 
                 $('.swiper-slide', $galleryMain).each(function() {
                     var slideWidth = $(this).width();
@@ -232,28 +253,105 @@ import 'lightgallery/dist/js/lightgallery-all.min.js';
             });
         }
 
+        function swiperVideoGallery(el) {
+            $(el).each(function() {
+                var e = $(this);
+                var $galleryThumbs = $(this).find('.video-gallery-thumbs');
+                var $galleryMain = $(this).find('.video-gallery-top');
+
+                // Fit width videos.
+                $(".video-gallery-top__container", $galleryMain).fitVids();
+
+                var thumbsCount = $galleryThumbs.data('count') || 0;
+                var galleryThumbs = new Swiper($galleryThumbs, {
+                    spaceBetween: 10,
+                    slidesPerView: 5,
+                    loop: thumbsCount > 4 ? true : false,
+                    freeMode: true,
+                    loopedSlides: 5, //looped slides should be the same
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    watchSlidesVisibility: true,
+                    watchSlidesProgress: true,
+                    breakpoints: {
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 10,
+                            loop: thumbsCount > 4 ? true : false,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 10,
+                            loop: thumbsCount > 3 ? true : false,
+                        },
+                        640: {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                            loop: thumbsCount > 2 ? true : false,
+                        },
+                        320: {
+                            slidesPerView: 2,
+                            spaceBetween: 10,
+                            loop: thumbsCount > 1 ? true : false,
+                        }
+                    }
+                });
+
+                $('.swiper-slide', $galleryThumbs).each(function() {
+                    $(this).find('a').click(function() {
+                        $(this).closest( ".swiper-slide").addClass("selected").siblings().removeClass("selected");
+                        galleryThumbs.slideTo(galleryThumbs.clickedIndex);
+                    });
+                });
+
+                $('.swiper-slide-active', $galleryThumbs).first().addClass("selected");
+            });
+        }
+
         function gallery(el) {
             $(el).lightGallery({
                 getCaptionFromTitleOrAlt: false
             });
         }
 
+        function initScroll() {
+            if (elExists('#back-top')) scrollTop('#back-top');
+        }
+
+        function initSlider() {
+            if (elExists('.swiper-block')) slider('.swiper-block');
+        }
+
+        function initGeneralSlider() {
+            if (elExists('.swiper-general')) generalSlider('.swiper-general');
+        }
+
+        function initGallery() {
+            if (elExists('#lightgallery')) gallery('#lightgallery');
+        }
+
+        function initSwiperGallery() {
+            if (elExists('.swiper-gallery')) swiperGallery('.swiper-gallery');
+        }
+
+        function initSwiperVideoGallery() {
+            if (elExists('.swiper-video-gallery')) swiperVideoGallery('.swiper-video-gallery');
+        }
+
+
+
         return {
             init: function() {
-                var scrollEl = '#back-top';
-                var stickyEl = '.site-header';
-                var sliderEl = '.swiper-block';
-                var generalSliderEl = '.swiper-general';
-                var galleryEl = '#lightgallery';
-                var swiperGalleryEl = '.swiper-gallery';
-
                 general();
                 offcanvas();
-                if (elExists(scrollEl)) scrollTop(scrollEl);
-                if (elExists(sliderEl)) slider(sliderEl);
-                if (elExists(generalSliderEl)) generalSlider(generalSliderEl);
-                if (elExists(swiperGalleryEl)) swiperGallery(swiperGalleryEl);
-                if (elExists(galleryEl)) gallery(galleryEl);
+                initScroll();
+                initSlider();
+                initGeneralSlider();
+                initGallery();
+                initSwiperGallery();
+                initSwiperVideoGallery();
             },
             onload: function() {
                 startTime();
