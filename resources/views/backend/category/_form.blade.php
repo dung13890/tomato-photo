@@ -49,7 +49,7 @@
         @endforeach
     @else
     <div class="input-group">
-        {{ Form::text('link_youtube[]', null, ['class' => 'form-control', 'placeholder' => __('repositories.label.link_youtube')]) }}
+        <input type="text" name="link_youtube[]" class="form-control" placeholder="{{ __('repositories.label.link_youtube') }}">
         <span class="input-group-btn">
             <a class="btn btn-default" href="javascript:void(0)"><i class="ion-ios-plus-outline"></i></a>
         </span>

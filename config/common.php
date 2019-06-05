@@ -15,7 +15,7 @@ return [
         'limit' => 5,
     ],
     'product' => [
-        'limit' => 6,
+        'limit' => 30,
     ],
     'date' => [
         'blog' => 'd F Y',
