@@ -220,6 +220,14 @@
     }
 }
 
+.column-1 {
+    margin: 0;
+    .single-gallery-items {
+        width: 100%;
+        padding: 0;
+    }
+}
+
 .showcase-block {
     .showcase-image-wrapper {
         position: relative;
@@ -779,4 +787,47 @@ h2.service-heading {
     font-weight: bold;
     color: $color-primary;
     text-decoration: underline;
+}
+
+.pricing-wrapper {
+    background: #f1f1f1;
+}
+
+.pricing-item {
+    height: 100%;
+    padding: 20px 20px 87px 20px;
+    border-bottom: 5px solid #75b51c;
+    text-align: center;
+    position: relative;
+    background: #fff;
+
+    .pricing-item__icon {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .pricing-item__title {
+        font-size: 28px;
+        text-transform: uppercase;
+    }
+
+    .pricing-item__price {
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-primary;
+    }
+
+    .pricing-item__btn {
+        position: absolute;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        margin: auto;
+        text-align: center;
+
+        a {
+            margin: auto;
+        }
+    }
 }

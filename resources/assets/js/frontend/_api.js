@@ -38,17 +38,31 @@ export const getInstagram = async (username, limit = 6) => {
 
         let payload = [];
         let images = [];
+        let profile = null;
         const temp1 = response.data.split('window._sharedData = ');
         const temp2 = temp1.length ? temp1[1].split(';</script>') : [null];
         const data = JSON.parse(temp2[0]);
 
         if (data && data['entry_data']['ProfilePage'] && data['entry_data']['ProfilePage'].length) {
             images = data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+
+            profile = {
+                username: data['entry_data']['ProfilePage'][0]['graphql']['user']['username'],
+                biography: data['entry_data']['ProfilePage'][0]['graphql']['user']['biography'],
+                externalUrl: data['entry_data']['ProfilePage'][0]['graphql']['user']['external_url'],
+                fullName: data['entry_data']['ProfilePage'][0]['graphql']['user']['full_name'],
+                hasPhoneNumber: data['entry_data']['ProfilePage'][0]['graphql']['user']['has_phone_number'],
+                hasProfilePic: data['entry_data']['ProfilePage'][0]['graphql']['user']['has_profile_pic'],
+                profilePicUrl: data['entry_data']['ProfilePage'][0]['graphql']['user']['profile_pic_url'],
+                profilePicUrlHD: data['entry_data']['ProfilePage'][0]['graphql']['user']['profile_pic_url_hd']
+            }
         } else if (data && data['entry_data']['TagPage'] && data['entry_data']['TagPage'].length) {
             images = data['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'];
         }
 
         for (let i = 0; i < images.length; i++) {
+            if (i > limit - 1) break;
+
             let type = 'image';
             let caption = 'Instagram Image';
             let link = null;
@@ -78,13 +92,14 @@ export const getInstagram = async (username, limit = 6) => {
                 large: images[i]['node']['thumbnail_resources'][4]['src'].replace('/^https?\:/i', ''),
                 original: images[i]['node']['display_url'].replace('/^https?\:/i', '')
             });
-
-            if (i > limit - 2) break;
          }
 
         return {
             status: 1,
-            payload
+            payload,
+            payloadExt: {
+                profile
+            }
         };
     } catch(err) {
         return {

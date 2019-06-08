@@ -388,3 +388,10 @@ ol {
 .contact-box.open .contact-box__button .contact-box__button--close {
     display: block;
 }
+
+.instagram-gallery .instagram-profile img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: auto;
+}
