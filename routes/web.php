@@ -25,6 +25,9 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
     Route::get('/contact', function () {
         return view('frontend.page.contact', ['disableIconContact' => true]);
     })->name('contact');
+    Route::get('/pricing', function () {
+        return view('frontend.page.pricing');
+    })->name('pricing');
     Route::post('home/contact', 'HomeController@storeContact')->name('home.store.contact');
 
     Route::get('/blog', 'PostController@index')->name('blog');
