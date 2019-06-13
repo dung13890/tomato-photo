@@ -26,7 +26,10 @@ Route::group(['prefix' => '/', 'namespace' => 'Frontend'], function () {
         return view('frontend.page.contact', ['disableIconContact' => true]);
     })->name('contact');
     Route::get('/pricing', function () {
-        return view('frontend.page.pricing');
+        $compact['__pricings'] = app(\App\Contracts\Repositories\PricingRepository::class)->getData(
+                config('common.pricing.limit')
+            );
+        return view('frontend.page.pricing', $compact);
     })->name('pricing');
     Route::post('home/contact', 'HomeController@storeContact')->name('home.store.contact');
 
@@ -55,6 +58,9 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::resource('slide', 'SlideController');
         Route::resource('menu', 'MenuController', [
             'except' => ['show', 'create']
+        ]);
+        Route::resource('pricing', 'PricingController', [
+            'only' => ['index', 'store']
         ]);
         Route::post('menu/serialize', 'MenuController@serialize')->name('menu.serialize');
         Route::resource('config', 'ConfigController', [

@@ -33,6 +33,9 @@
                         <a class="nav-link" href="{{ route('backend.user.index') }}"> {{ __('repositories.user.name') }}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('backend.pricing.index') }}"> {{ __('repositories.pricing.name') }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('backend.slide.index') }}"> {{ __('repositories.slide.name') }}</a>
                     </li>
                     <li class="nav-item">

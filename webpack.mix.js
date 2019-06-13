@@ -20,6 +20,7 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .js('resources/assets/js/backend/modules/home.js', 'public/assets/js/backend/modules')
     .js('resources/assets/js/backend/modules/product.js', 'public/assets/js/backend/modules')
     .js('resources/assets/js/backend/modules/config.js', 'public/assets/js/backend/modules')
+    .js('resources/assets/js/backend/modules/pricing.js', 'public/assets/js/backend/modules')
     .sass('resources/assets/sass/backend/app.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/category.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/post.scss', 'public/assets/css/backend')
@@ -28,6 +29,7 @@ mix.js('resources/assets/js/backend.js', 'public/assets/js')
     .sass('resources/assets/sass/backend/modules/home.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/product.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/config.scss', 'public/assets/css/backend')
+    .sass('resources/assets/sass/backend/modules/pricing.scss', 'public/assets/css/backend')
     .sass('resources/assets/sass/backend/modules/login.scss', 'public/assets/css/backend');
 mix.js('resources/assets/vue/dropzone.js', 'public/assets/vue/');
 mix.copyDirectory('resources/assets/seeds', 'public/statics/files/seeds');

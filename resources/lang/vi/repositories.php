@@ -73,6 +73,7 @@ return [
         'ceo_keywords' => 'Từ khoá SEO',
         'ceo_description' => 'Mô tả SEO',
         'icon' => 'Icon menu (200x200)',
+        'icon_th' => 'Icon :row',
         'title' => 'Tiêu đề',
         'link_youtube' => 'Link Youtube',
         'root' => 'Nguồn',
@@ -202,6 +203,13 @@ return [
             'create' => 'Tạo mới thành viên',
             'edit' => 'Cập nhật thành viên',
             'show' => 'Thông tin thành viên',
+        ]
+    ],
+
+    'pricing' => [
+        'name' => 'Pricing',
+        'resource' => [
+            'index' => 'Danh sách pricing',
         ]
     ],
 
