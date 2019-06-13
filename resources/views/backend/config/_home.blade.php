@@ -34,7 +34,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][0][icon]', $items->keyBy('key')['home']['value']['how_to'][0]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][0][icon]', $items->keyBy('key')['home']['value']['how_to'][0]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
@@ -53,7 +53,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][1][icon]', $items->keyBy('key')['home']['value']['how_to'][1]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][1][icon]', $items->keyBy('key')['home']['value']['how_to'][1]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
@@ -76,7 +76,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][2][icon]', $items->keyBy('key')['home']['value']['how_to'][2]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][2][icon]', $items->keyBy('key')['home']['value']['how_to'][2]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
@@ -95,7 +95,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][3][icon]', $items->keyBy('key')['home']['value']['how_to'][3]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][3][icon]', $items->keyBy('key')['home']['value']['how_to'][3]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
@@ -118,7 +118,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][4][icon]', $items->keyBy('key')['home']['value']['how_to'][4]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][4][icon]', $items->keyBy('key')['home']['value']['how_to'][4]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
@@ -137,7 +137,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 {{ Form::label('home', 'Icon', ['class'=>'control-label']) }}
-                                {{ Form::text('home[how_to][5][icon]', $items->keyBy('key')['home']['value']['how_to'][5]['icon'] ?? null, ['class' => 'form-control']) }}
+                                {{ Form::text('home[how_to][5][icon]', $items->keyBy('key')['home']['value']['how_to'][5]['icon'] ?? null, ['class' => 'form-control icon-picker']) }}
                             </div>
                             <div class="form-group">
                                 {{ Form::label('home', 'Title', ['class'=>'control-label']) }}
