@@ -33,7 +33,7 @@
         "es6-promise": "^4.2.5",
         "font-awesome": "^4.7.0",
         "fontawesome-iconpicker": "^3.2.0",
-        "jquery-ui": "^1.12.1",
+        "jquery-ui": "^1.13.2",
         "lang.js": "^1.1.13",
         "lightgallery": "^1.6.11",
         "magnific-popup": "^1.1.0",
